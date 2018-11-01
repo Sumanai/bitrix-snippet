@@ -15,7 +15,7 @@
             "",
             "\\$id = \\$rsUser->Add(\\$arfields);",
             "if(!\\$id) {",
-            "\techo \\$rsUser->LAST_ERROR;"
+            "\techo \\$rsUser->LAST_ERROR;",
             "}"
         ],
         "description": "Создает нового пользователя."
@@ -31,7 +31,7 @@
         "prefix": "cusergetbyid",
         "body": [
             "\\$arUser = CUser::GetByID('${1:usrid}')->fetch();",
-            "if(is_array(\\$arUser)) {"
+            "if(is_array(\\$arUser)) {",
             "\tvar_export(\\$arUser);",
             "}"
         ],
@@ -46,7 +46,7 @@
             ");",
             "\\$rsUsers = CUser::GetList(",
             "\t(\\$by = \"personal_country\"),",
-            "\t(\\$order = "desc"),",
+            "\t(\\$order = \"desc\"),",
             "\t'\\$arFilter'",
             ");",
             "while(\\$arUsers = \\$rsUsers->fetch()){",
@@ -58,13 +58,13 @@
     "CUser.Update": {
         "prefix": "cuserupdate",
         "body": [
-            "$arFields = array(",
+            "\\$arFields = array(",
             "\t'NAME'  => '${1:newusername}',",
             "\t'EMAIL' => '${2:newusremail}',",
             "\t//...",
             ");",
             "\\$rsUser = new CUser;",
-            "\\$rsUser->Update('${3:usrID}', \\$arFields);",
+            "\\$rsUser->Update('${3:usrID}', \\$arFields);"
         ],
         "description": "Изменяет существующий сайт."
     }

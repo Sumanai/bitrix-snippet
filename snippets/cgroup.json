@@ -10,7 +10,7 @@
             "\t\"DESCRIPTION\"  => \"${2:desc}\",",
             "\t\"USER_ID\"      => array('${3:usersID}'),",
             ");",
-            "\\$id = $group->Add(\\$arFields);",
+            "\\$id = \\$group->Add(\\$arFields);",
             "if (strlen(\\$rsGroup->LAST_ERROR)>0) echo \\$rsGroup->LAST_ERROR;"
         ],
         "description": "Добавляет новую группу пользователей."

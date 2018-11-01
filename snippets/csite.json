@@ -34,7 +34,7 @@
         "prefix": "csitegetbyid",
         "body": [
             "\\$arSite = CSite::GetByID('${1:siteLID}')->fetch();",
-            "if(is_array(\\$arSite)) {"
+            "if(is_array(\\$arSite)) {",
             "\tvar_export(\\$arSite);",
             "}"
         ],

@@ -8,7 +8,7 @@
             "\t\"NAME\"   => \"${1:name}\",",
             "\t\"PROPERTY_VALUES\" => array(",
             "\t\t//propertys array ...",
-            "\t)"
+            "\t)",
             ");",
             "if(!\\$id = \\$rsEl->Add(\\$arFields)) {",
             "\techo \"Error:\" . \\$rsEl->LAST_ERROR;",
@@ -59,7 +59,7 @@
             "\t'ACTIVE' => 'Y',",
             "\t//...",
             ");",
-            "\\$rsIDElement = \\$rsElement->Update('${1:id}',\\$arFields);",
+            "\\$rsIDElement = \\$rsElement->Update('${1:id}',\\$arFields);"
         ],
         "description": "Изменяет элемент."
     }

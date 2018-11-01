@@ -2,14 +2,22 @@
     "name": "bitrix-snippet",
     "displayName": "Bitrix Snippet",
     "description": "",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "Sumanai",
+	"bugs": {
+		"url": "https://github.com/Sumanai/bitrix-snippet/issues",
+		"email": "sumanai@ya.ru"
+	},
     "engines": {
         "vscode": "^1.28.0"
     },
     "categories": [
         "Snippets"
     ],
+     "repository": {
+        "type": "git",
+        "url": "https://github.com/Sumanai/bitrix-snippet.git"
+    },
     "contributes": {
         "snippets": [{
                 "language": "php",
