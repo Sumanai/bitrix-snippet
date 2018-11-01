@@ -1,0 +1,13 @@
+{
+    "D7Config": {
+        "prefix": "d7config",
+        "body": [
+            "//get from /bitrix/.settings.php",
+            "$realm = \\\\Bitrix\\\\Main\\\\Config\\\\Configuration::getValue(\"${1:param}\");",
+            "if (is_null($realm)) {",
+            "\t$realm = \"Bitrix Site Manager\"",
+            "}"
+        ],
+        "description": "Метод получает значение одного параметра."
+    }
+}

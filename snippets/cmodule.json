@@ -1,0 +1,22 @@
+{
+    "CModule.IncludeModule": {
+        "prefix": "cmoduleinclude",
+        "body": [
+            "CModule::IncludeModule('${1:moduleName}');"
+        ],
+        "description": "Проверяет установлен ли модуль и если установлен, то подключает его."
+    },
+    "CModule.AddAutoloadClasses": {
+        "prefix": "cmoduleaddautoload",
+        "body": [
+            "CModule::AddAutoloadClasses(",
+            "\t'',",
+            "\tarray(",
+            "\t\t'${1:classname}' => '${2:pathclass}',",
+            "\t\t//...",
+            ")",
+            ");"
+        ],
+        "description": ""
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "D7element": {
+        "prefix": "d7element",
+        "body": [
+            "\\$arElements = \\\\Bitrix\\\\Iblock\\\\ElementTable::getList(array(",
+            "\t'select' => array('NAME'),",
+            "\t'filter' => array('ID' => '${1:id}')",
+            "))->fetch();",
+            "",
+            "foreach(\\$arElements as \\$arElement) {",
+            "\tvar_export(\\$arElement);",
+            "}"
+        ],
+        "description": ""
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "D7Option": {
+        "prefix": "d7option",
+        "body": [
+            "\\$cookiePrefix = \\\\Bitrix\\\\Main\\\\Config\\\\Option::get('${1:module}', '${2:var}');"
+        ],
+        "description": "Метод возвращает значение параметра."
+    }
+}

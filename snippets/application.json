@@ -1,0 +1,30 @@
+{
+    "APPLICATION.ShowMeta": {
+        "prefix": "APPLImeta",
+        "body": [
+            "\\$APPLICATION->ShowMeta('${1:metaName}');"
+        ],
+        "description": "Отображает свойство страницы в виде мета-тега."
+    },
+    "APPLICATION.ShowTitle": {
+        "prefix": "APPLItitle",
+        "body": [
+            "\\$APPLICATION->ShowTitle();"
+        ],
+        "description": "Отображает заголовок страницы."
+    },
+    "APPLICATION.ShowHead": {
+        "prefix": "APPLIhead",
+        "body": [
+            "\\$APPLICATION->ShowHead();"
+        ],
+        "description": "Метод предназначена для вывода в шаблоне сайта основных полей тега <head>."
+    },
+    "APPLICATION.ShowPanel": {
+        "prefix": "APPLIpanel",
+        "body": [
+            "\\$APPLICATION->ShowPanel();"
+        ],
+        "description": "Отображает HTML представляющий из себя панель управления публичной частью."
+    }
+}

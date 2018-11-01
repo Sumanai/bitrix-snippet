@@ -1,0 +1,16 @@
+{
+    "D7User": {
+        "prefix": "d7user",
+        "body": [
+            "\\$arUsers = \\\\Bitrix\\\\Main\\\\UserTable::getList(array(",
+            "\t'select' => array('LOGIN'),",
+            "\t'filter' => array('ID' => '1')",
+            "))->fetch();",
+            "",
+            "foreach(\\$arUsers as \\$arUser) {",
+            "\tvar_export(\\$arUser);",
+            "}"
+        ],
+        "description": ""
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "CUser.add": {
+        "prefix": "cuseradd",
+        "body": [
+            "\\$rsUser = new CUser;",
+            "\\$arFields = Array(",
+            "\t\"NAME\"             => \"${1:username}\",",
+            "\t\"LAST_NAME\"        => \"${2:usernamelast}\",",
+            "\t\"EMAIL\"            => \"${3:usremail}\",",
+            "\t\"LOGIN\"            => \"${4:login}\",",
+            "\t\"ACTIVE\"           => \"Y\",",
+            "\t\"GROUP_ID\"         => array('${5:groups}'),",
+            "\t\"PASSWORD\"         => '${6:userpass}',",
+            ");",
+            "",
+            "\\$id = \\$rsUser->Add(\\$arfields);",
+            "if(!\\$id) {",
+            "\techo \\$rsUser->LAST_ERROR;"
+            "}"
+        ],
+        "description": "Создает нового пользователя."
+    },
+    "CUser.delete": {
+        "prefix": "cuserdelete",
+        "body": [
+            "CUser::Delete('${1:usrid}');"
+        ],
+        "description": "Удаляет пользователя."
+    },
+    "CUser.GetByID": {
+        "prefix": "cusergetbyid",
+        "body": [
+            "\\$arUser = CUser::GetByID('${1:usrid}')->fetch();",
+            "if(is_array(\\$arUser)) {"
+            "\tvar_export(\\$arUser);",
+            "}"
+        ],
+        "description": "Возвращает пользователя по его ID."
+    },
+    "CUser.GetList": {
+        "prefix": "cusergetlist",
+        "body": [
+            "\\$arFilter = array(",
+            "\t'ACTIVE' => 'Y',",
+            "\t'ID' => '${1:usrid}'",
+            ");",
+            "\\$rsUsers = CUser::GetList(",
+            "\t(\\$by = \"personal_country\"),",
+            "\t(\\$order = "desc"),",
+            "\t'\\$arFilter'",
+            ");",
+            "while(\\$arUsers = \\$rsUsers->fetch()){",
+            "\tvar_export(\\$arUsers);",
+            "}"
+        ],
+        "description": "Возвращает список пользователей."
+    },
+    "CUser.Update": {
+        "prefix": "cuserupdate",
+        "body": [
+            "$arFields = array(",
+            "\t'NAME'  => '${1:newusername}',",
+            "\t'EMAIL' => '${2:newusremail}',",
+            "\t//...",
+            ");",
+            "\\$rsUser = new CUser;",
+            "\\$rsUser->Update('${3:usrID}', \\$arFields);",
+        ],
+        "description": "Изменяет существующий сайт."
+    }
+}

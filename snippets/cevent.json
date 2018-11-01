@@ -1,0 +1,15 @@
+{
+    "CEvent.Send": {
+        "scope": "php",
+        "prefix": "CEventSend",
+        "body": [
+            "\\$arEventFields = array(",
+            "\t'EMAIL_TO' => '${1:email}',",
+            "//fields ...",
+            ");",
+            "",
+            "CEvent::Send('${2:eventname}','${3:siteID}',\\$arEventFields);"
+        ],
+        "description": "Добавляет событие в почтовую систему (регистрирует для отправки)."
+    }
+}

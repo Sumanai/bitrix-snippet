@@ -1,0 +1,18 @@
+{
+    "CAgent.Add": {
+        "scope": "php",
+        "prefix": "cagentadd",
+        "body": [
+            "CAgent::AddAgent(",
+            "\"${1:funcName}\",",
+            "\"${2:moduleName}\",",
+            "\"N\",",
+            "\"${3:interval}\",",
+            "\"${4:dateVerifyStart}\",",
+            "\"${5:active}\",",
+            "\"${6:dateStart}\", ",
+            "30);"
+        ],
+        "description": "Метод регистрирует новую функцию-агента."
+    }
+}

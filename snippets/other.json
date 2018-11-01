@@ -1,0 +1,10 @@
+{
+    "Bitrix.user": {
+        "scope": "php",
+        "prefix": "user",
+        "body": [
+            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";print_r(${1:\\$arResult});echo \"</pre>\";}"
+        ],
+        "description": "Принт переменной только для админа."
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "CIBlockSection.Add": {
+        "prefix": "CIBlockSectionAdd",
+        "body": [
+            "\\$rsSect = new CIBlockSection;",
+            "\\$arFields = array(",
+            "\t\"ACTIVE\"       => \"Y\",",
+            "\t\"NAME\"   => \"${1:name}\",",
+            ");",
+            "if(!\\$id = \\$rsSect->Add(\\$arFields)) {",
+            "\techo \"Error:\" . \\$rsSect->LAST_ERROR;",
+            "}"
+        ],
+        "description": "Добавляет в информационный блок новый раздел."
+    },
+    "CIBlockSection.Delete": {
+        "prefix": "CIBlockSectionDel",
+        "body": [
+            "CIBlockSection::Delete('${1:SectionID}');"
+        ],
+        "description": "Удаляет раздел из информационного блока."
+    },
+    "CIBlockSection.GetByID": {
+        "prefix": "CIBlockSectionID",
+        "body": [
+            "\\$arSection = CIBlockSection::GetByID('${1:SectionID}')->fetch();",
+            "if(is_array(\\$arSection)) {",
+            "\t//body ...",
+            "}"
+        ],
+        "description": "Возвращает параметры раздела по его коду ID."
+    },
+    "CIBlockSection.GetList": {
+        "prefix": "CIBlockSectionList",
+        "body": [
+            "\\$rsSection = CIBlockSection::GetList(",
+            "\t$arOrder  = array('SORT' => 'ASC'),",
+            "\t$arFilter = array(",
+            "\t\t'ACTIVE' => 'Y'",
+            "\t),",
+            "\tfalse",
+            "\t\\$arSelect = array('ID','NAME','IBLOCK_ID','CODE','UF_*'),",
+            "false",
+            ");",
+            "while(\\$arSection = \\$rsSection->fetch()) {",
+            "\tvar_export(\\$arSection);",
+            "}"
+        ],
+        "description": "Возвращает список разделов по фильтру."
+    },
+    "CIBlockSection.Update": {
+        "prefix": "CIBlocSectionUpdate",
+        "body": [
+            "\\$rsSection = new CIBlockSection;",
+            "\\$arFields = array(",
+            "\t'ACTIVE' => 'Y',",
+            "\t//...",
+            ");",
+            "\\$rsIDSection = $rsSection->Update('${1:id}',\\$arFields);",
+        ],
+        "description": "Изменяет параметры существующего раздела."
+    }
+
+}

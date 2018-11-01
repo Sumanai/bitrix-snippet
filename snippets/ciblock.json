@@ -1,0 +1,57 @@
+{
+    "CIBlock.Add": {
+        "prefix": "CIBlockAdd",
+        "body": [
+            "\\$rsIB = new CIBlock;",
+            "\\$arFields = array(",
+            "\t\"ACTIVE\"       => \"Y\",",
+            "\t\"CODE\"   => \"${1:codename}\"",
+            ");",
+            "\\$id = \\$rsIB->Add(\\$arFields);",
+        ],
+        "description": "Добавляет новый информационный блок."
+    },
+    "CIBlock.Delete": {
+        "prefix": "CIBlockDel",
+        "body": [
+            "CIBlock::Delete('${1:iblockID}');"
+        ],
+        "description": "Удаляет информационный блок."
+    },
+    "CIBlock.GetByID": {
+        "prefix": "CIBlockID",
+        "body": [
+            "\\$arBlock = CIBlock::GetByID('${1:iblockID}')->fetch();"
+        ],
+        "description": "Возвращает информационный блок по его ID."
+    },
+    "CIBlock.GetList": {
+        "prefix": "CIBlockList",
+        "body": [
+            "\\$rsBlock = CIBlock::GetList(",
+            "\t$arOrder  = array('SORT' => 'ASC'),",
+            "\t$arFilter = array(",
+            "\t\t'ACTIVE' => 'Y'",
+            "\t),",
+            "\ttrue",
+            ");",
+            "while(\\$arBlocks = \\$rsBlock->fetch()) {",
+            "\tvar_export(\\$arBlocks);",
+            "}"
+        ],
+        "description": "Возвращает список информационных блоков по фильтру."
+    },
+    "CIBlock.Update": {
+        "prefix": "CIBlockUpdate",
+        "body": [
+            "\\$rsIB = new CIBlock;",
+            "\\$arFields = array(",
+            "\t'ACTIVE' => 'Y',",
+            "\t//...",
+            ");",
+            "\\$rsID = \\$rsIB->Update('${1:id}',\\$arFields);",
+        ],
+        "description": "Изменяет информационный блок."
+    }
+
+}

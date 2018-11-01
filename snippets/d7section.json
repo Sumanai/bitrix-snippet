@@ -1,0 +1,16 @@
+{
+    "D7section": {
+        "prefix": "d7section",
+        "body": [
+            "\\$arSections = \\\\Bitrix\\\\Iblock\\\\SectionTable::getList(array(",
+            "\t'select' => array('NAME'),",
+            "\t'filter' => array('ID' => '${1:id}')",
+            "))->fetch();",
+            "",
+            "foreach(\\$arSections as \\$arSection) {",
+            "\tvar_export(\\$arSection);",
+            "}"
+        ],
+        "description": ""
+    }
+}

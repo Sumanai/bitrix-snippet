@@ -1,0 +1,19 @@
+{
+    "CFile.Delete": {
+        "scope": "php",
+        "prefix": "CFileDelete",
+        "body": [
+            "CFile::Delete('${1:fileID}');"
+        ],
+        "description": "Метод удаляет файл из таблицы зарегистрированных файлов (b_file) и с диска."
+    },
+
+    "CFile.GetPath": {
+        "scope": "php",
+        "prefix": "CFileGetPath",
+        "body": [
+            "CFile::GetPath('${1:fileID}');"
+        ],
+        "description": "Метод возвращает путь от корня сайта к зарегистрированному файлу. Возвращает NULL, если файл не зарегистрирован."
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "CGroup.Add": {
+        "prefix": "cgroupadd",
+        "body": [
+            "\\$rsGroup = new CGroup;",
+            "\\$arFields = Array(",
+            "\t\"ACTIVE\"       => \"Y\",",
+            "\t\"C_SORT\"       => 100,",
+            "\t\"NAME\"         => \"${1:groupName}\",",
+            "\t\"DESCRIPTION\"  => \"${2:desc}\",",
+            "\t\"USER_ID\"      => array('${3:usersID}'),",
+            ");",
+            "\\$id = $group->Add(\\$arFields);",
+            "if (strlen(\\$rsGroup->LAST_ERROR)>0) echo \\$rsGroup->LAST_ERROR;"
+        ],
+        "description": "Добавляет новую группу пользователей."
+    },
+
+    "CGroup.Delete": {
+        "prefix": "cgroupdelete",
+        "body": [
+            "\\$rsGroup = new CGroup;",
+            "if(!\\$rsGroup->Delete('${1:groupID}')) {",
+            "\techo 'Group Delete';",
+            "}"
+        ],
+        "description": "Удаляет группу."
+    },
+    "CGroup.GetByID": {
+        "prefix": "cgroupgetby",
+        "body": [
+            "\\$arGroup = CGroup::GetByID('${1:groupID}','Y')->fetch();",
+            "if(is_array(\\$arGroup)) {",
+            "\tvar_export(\\$arGroup);",
+            "}"
+        ],
+        "description": "Получает данные о группе по ее ID."
+    },
+    "CGroup.GetList": {
+        "prefix": "cgroupgetlist",
+        "body": [
+            "\\$arFilter = array(",
+            "\t'ID'        => '${1:groupID}',",
+            "\t'ACTIVE'    => 'Y',",
+            "\t//...",
+            ");",
+            "",
+            "\\$rsGroups = CGroup::GetList(",
+            "\t(\\$by = \"c_sort\"),",
+            "\t(\\$order = \"desc\"),",
+            "\t\\$arfilter",
+            ");",
+            "while(\\$arGroup = \\$rsGroups->fetch()) {",
+            "\tvar_export(\\$arGroup);",
+            "}"
+        ],
+        "description": "Получает список групп по фильтру."
+    },
+    "CGroup.Update": {
+        "prefix": "cgroupupdate",
+        "body": [
+            "\\$arFilter = array(",
+            "\t'ID'     => '${1:groupID}',",
+            "\t'NAME'   => '${1:newgroupname}'",
+            ");",
+            "",
+            "\\$rsGroup = new CGroup;",
+            "\\$rsGroup->Update('${2:groupID}', \\$arfields);",
+            "if (strlen(\\$rsGroup->LAST_ERROR)>0) echo \\$rsGroup->LAST_ERROR;"
+        ],
+        "description": "Изменяет существующую группу."
+    }
+
+}

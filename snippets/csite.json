@@ -1,0 +1,57 @@
+{
+    "CSite.Add": {
+        "prefix": "csiteadd",
+        "body": [
+            "\\$arFields = Array(",
+            "\t\"LID\"              => \"ru\",",
+            "\t\"ACTIVE\"           => \"Y\",",
+            "\t\"DEF\"              => \"N\",",
+            "\t\"NAME\"             => \"${1:sitename}\",",
+            "\t\"DIR\"              => \"${2:sitedir}\",",
+            "\t\"FORMAT_DATE\"      => \"DD.MM.YYYY\",",
+            "\t\"FORMAT_DATETIME\"  => \"DD.MM.YYYY HH:MI:SS\",",
+            "\t\"CHARSET\"          => \"${3:sitecharset}\",",
+            "\t\"EMAIL\"            => \"${4:siteemail}\",",
+            "\t\"LANGUAGE_ID\"      => \"${5:sitelang}\",",
+            "\t\"DOC_ROOT\"         => \"\"",
+            ");",
+            "\\$rsSite = new CSite;",
+            "\\$rsSite->Add(\\$arFields);",
+            "if (strlen(\\$rsSite->LAST_ERROR)>0) \\$strError .= \\$rsSite->LAST_ERROR;"
+        ],
+        "description": "Добавляет новый сайт."
+    },
+    "CSite.Delete": {
+        "prefix": "csitedelete",
+        "body": [
+            "if(CSite::Delete('${1:siteLID}') === false){",
+            "\techo \"Can't Delete site...\";",
+            "}"
+        ],
+        "description": "Удаляет сайт."
+    },
+    "CSite.GetByID": {
+        "prefix": "csitegetbyid",
+        "body": [
+            "\\$arSite = CSite::GetByID('${1:siteLID}')->fetch();",
+            "if(is_array(\\$arSite)) {"
+            "\tvar_export(\\$arSite);",
+            "}"
+        ],
+        "description": "Получает данные об одном сайте."
+    },
+    "Csite.Update": {
+        "prefix": "csiteupdate",
+        "body": [
+            "$arFields = array(",
+            "\t'EMAIL' => '${1:siteemail}',",
+            "\t'NAME'  => '${2:sitename}',",
+            "\t//...",
+            ");",
+            "\\$rsSite = new CSite;",
+            "\\$rsSite->Update('${3:siteLID}', \\$arFields);",
+            "if (strlen(\\$rsSite->LAST_ERROR)>0) \\$strError .= \\$rsSite->LAST_ERROR;"
+        ],
+        "description": "Изменяет существующий сайт."
+    }
+}

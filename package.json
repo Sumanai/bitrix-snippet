@@ -1,0 +1,100 @@
+{
+    "name": "bitrix-snippet",
+    "displayName": "Bitrix Snippet",
+    "description": "",
+    "version": "0.0.3",
+    "publisher": "Sumanai",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [{
+                "language": "php",
+                "path": "./snippets/application.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cagent.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cevent.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cfile.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cgroup.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/ciblock.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/ciblockelement.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/ciblocksection.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cmodule.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/csite.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cuser.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/cutil.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7autload.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7config.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7element.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7group.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7loader.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7option.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7section.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/d7user.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/other.json"
+            }
+        ]
+    }
+}
