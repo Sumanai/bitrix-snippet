@@ -22,3 +22,7 @@
 - Fix CIBlock.GetList
 - Add more CMain API
 - Fix D7Autload code style
+
+## [0.0.6] - 2018-11-07
+
+- Fix CIBlock Element and Section
