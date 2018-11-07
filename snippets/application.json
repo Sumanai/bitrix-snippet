@@ -2,7 +2,7 @@
     "APPLICATION.ShowMeta": {
         "prefix": "APPLImeta",
         "body": [
-            "\\$APPLICATION->ShowMeta('${1:metaName}');"
+            "\\$APPLICATION->ShowMeta(\"${1:metaName}\");"
         ],
         "description": "Отображает свойство страницы в виде мета-тега."
     },
@@ -20,11 +20,39 @@
         ],
         "description": "Метод предназначена для вывода в шаблоне сайта основных полей тега <head>."
     },
+    "APPLICATION.ShowHeadStrings": {
+        "prefix": "APPLIheadStrings",
+        "body": [
+            "\\$APPLICATION->ShowHeadStrings();"
+        ],
+        "description": "Отображает специальные стили, JavaScript либо произвольный html-код."
+    },
     "APPLICATION.ShowPanel": {
         "prefix": "APPLIpanel",
         "body": [
             "\\$APPLICATION->ShowPanel();"
         ],
         "description": "Отображает HTML представляющий из себя панель управления публичной частью."
+    },
+    "APPLICATION.ShowCSS": {
+        "prefix": "APPLIcss",
+        "body": [
+            "\\$APPLICATION->ShowCSS();"
+        ],
+        "description": "Отображает HTML для подключения CSS на странице."
+    },
+    "APPLICATION.ShowNavChain": {
+        "prefix": "APPLInavChain",
+        "body": [
+            "\\$APPLICATION->ShowNavChain();"
+        ],
+        "description": "Отображает HTML с навигационной цепочкой."
+    },
+    "APPLICATION.ShowProperty": {
+        "prefix": "APPLIproperty",
+        "body": [
+            "\\$APPLICATION->ShowProperty(\"${1:property_id}\");"
+        ],
+        "description": "Отображает свойство страницы, учитывая свойства раздела."
     }
 }
