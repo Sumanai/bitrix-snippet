@@ -29,8 +29,8 @@
         "prefix": "CIBlockList",
         "body": [
             "\\$rsBlock = CIBlock::GetList(",
-            "\t$arOrder  = array('SORT' => 'ASC'),",
-            "\t$arFilter = array(",
+            "\t\\$arOrder  = array('SORT' => 'ASC'),",
+            "\t\\$arFilter = array(",
             "\t\t'ACTIVE' => 'Y'",
             "\t),",
             "\ttrue",
