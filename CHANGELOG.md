@@ -26,3 +26,8 @@
 ## [0.0.6] - 2018-11-07
 
 - Fix CIBlock Element and Section
+
+## [0.0.7] - 2018-11-09
+
+- Fix code style in CIBlockSection
+- Add CIBlockProperty
