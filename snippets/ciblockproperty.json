@@ -1,0 +1,63 @@
+{
+    "CIBlockProperty.Add": {
+        "prefix": "CIBlockPropAdd",
+        "body": [
+            "\\$ibp = new CIBlockProperty;",
+            "\\$arFields = array(",
+            "\t\"ACTIVE\"       => \"Y\",",
+            "\t\"NAME\"   => \"${1:name}\",",
+            ");",
+            "if(!\\$id = \\$ibp->Add(\\$arFields)) {",
+            "\techo \"Error:\" . \\$ibp->LAST_ERROR;",
+            "}"
+        ],
+        "description": "Добавляет новое свойство."
+    },
+    "CIBlockProperty.Delete": {
+        "prefix": "CIBlockPropDel",
+        "body": [
+            "CIBlockProperty::Delete(\"${1:PropertyID}\");"
+        ],
+        "description": "Удаляет свойства."
+    },
+    "CIBlockProperty.GetByID": {
+        "prefix": "CIBlockPropID",
+        "body": [
+            "\\$res = CIBlockProperty::GetByID(\"${1:PropertyID}\")",
+            "if(\\$ar_res = \\$res->GetNext()) {",
+            "\t//body ...",
+            "}"
+        ],
+        "description": "Возвращает свойство по его ID."
+    },
+    "CIBlockProperty.GetList": {
+        "prefix": "CIBlockPropList",
+        "body": [
+            "\\$properties = CIBlockProperty::GetList(",
+            "\t\\$arOrder  = array(\"SORT\" => \"ASC\"),",
+            "\t\\$arFilter = array(",
+            "\t\t\"ACTIVE\" => \"Y\",",
+            "\t\t\"IBLOCK_ID\" => ${1:IBLOCK_ID}",
+            "\t)",
+            ");",
+            "while(\\$prop_fields = \\$properties->GetNext()) {",
+            "\tvar_export(\\$prop_fields);",
+            "}"
+        ],
+        "description": "Возвращает список свойств по фильтру."
+    },
+    "CIBlockProperty.Update": {
+        "prefix": "CIBlockPropUpdate",
+        "body": [
+            "\\$ibp = new CIBlockProperty;",
+            "\\$arFields = array(",
+            "\t\"ACTIVE\" => \"Y\",",
+            "\t//...",
+            ");",
+            "if(!\\$ibp->Update(\"${1:id}\",\\$arFields)) {",
+            "\techo \\$ibp->LAST_ERROR;",
+            "}"
+        ],
+        "description": "Изменяет параметры свойства."
+    }
+}

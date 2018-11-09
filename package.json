@@ -49,6 +49,10 @@
             },
             {
                 "language": "php",
+                "path": "./snippets/ciblockproperty.json"
+            },
+            {
+                "language": "php",
                 "path": "./snippets/ciblocksection.json"
             },
             {
