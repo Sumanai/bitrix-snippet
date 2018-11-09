@@ -31,3 +31,7 @@
 
 - Fix code style in CIBlockSection
 - Add CIBlockProperty
+
+## [0.0.8] - 2018-11-09
+
+- Fix CIBlockProperty
