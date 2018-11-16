@@ -4,8 +4,8 @@
         "body": [
             "\\$rsIB = new CIBlock;",
             "\\$arFields = array(",
-            "\t\"ACTIVE\"       => \"Y\",",
-            "\t\"CODE\"   => \"${1:codename}\"",
+            "\t\"ACTIVE\"    => \"Y\",",
+            "\t\"CODE\"      => \"${1:codename}\"",
             ");",
             "\\$id = \\$rsIB->Add(\\$arFields);"
         ],
@@ -29,9 +29,9 @@
         "prefix": "CIBlockList",
         "body": [
             "\\$rsBlock = CIBlock::GetList(",
-            "\t\\$arOrder  = array('SORT' => 'ASC'),",
+            "\t\\$arOrder  = array(\"SORT\" => \"ASC\"),",
             "\t\\$arFilter = array(",
-            "\t\t'ACTIVE' => 'Y'",
+            "\t\t\"ACTIVE\"    => \"Y\"",
             "\t),",
             "\ttrue",
             ");",
@@ -46,10 +46,10 @@
         "body": [
             "\\$rsIB = new CIBlock;",
             "\\$arFields = array(",
-            "\t'ACTIVE' => 'Y',",
+            "\t\"ACTIVE\" => \"Y\",",
             "\t//...",
             ");",
-            "\\$rsID = \\$rsIB->Update('${1:id}',\\$arFields);"
+            "\\$rsID = \\$rsIB->Update(\"${1:id}\",\\$arFields);"
         ],
         "description": "Изменяет информационный блок."
     }

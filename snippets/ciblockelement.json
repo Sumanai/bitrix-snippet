@@ -4,9 +4,9 @@
         "body": [
             "\\$rsIB = new CIBlockElement;",
             "\\$arFields = array(",
-            "\t\"ACTIVE\"       => \"Y\",",
-            "\t\"NAME\"   => \"${1:name}\",",
-            "\t\"PROPERTY_VALUES\" => array(",
+            "\t\"ACTIVE\"            => \"Y\",",
+            "\t\"NAME\"              => \"${1:name}\",",
+            "\t\"PROPERTY_VALUES\"   => array(",
             "\t\t//propertys array ...",
             "\t)",
             ");",
@@ -37,13 +37,13 @@
         "prefix": "CIBlockElementList",
         "body": [
             "\\$rsElement = CIBlockElement::GetList(",
-            "\t\\$arOrder  = array('SORT' => 'ASC'),",
+            "\t\\$arOrder  = array(\"SORT\" => \"ASC\"),",
             "\t\\$arFilter = array(",
-            "\t\t'ACTIVE' => 'Y'",
+            "\t\t\"ACTIVE\"    => \"Y\"",
             "\t),",
             "\tfalse,",
             "\tfalse,",
-            "\t\\$arSelectFields = array('ID','NAME','IBLOCK_ID','CODE','PROPERTY_*')",
+            "\t\\$arSelectFields = array(\"ID\", \"NAME\", \"IBLOCK_ID\", \"CODE\", \"PROPERTY_*\")",
             ");",
             "while(\\$arElement = \\$rsElement->fetch()) {",
             "\tvar_export(\\$arElement);",
@@ -56,10 +56,10 @@
         "body": [
             "\\$rsElement = new CIBlockElement;",
             "\\$arFields = array(",
-            "\t'ACTIVE' => 'Y',",
+            "\t\"ACTIVE\"    => \"Y\",",
             "\t//...",
             ");",
-            "\\$rsIDElement = \\$rsElement->Update('${1:id}',\\$arFields);"
+            "\\$rsIDElement = \\$rsElement->Update(\"${1:id}\",\\$arFields);"
         ],
         "description": "Изменяет элемент."
     }

@@ -3,10 +3,10 @@
         "prefix": "d7grouplist",
         "body": [
             "\\$arGroups = \\\\Bitrix\\\\Main\\\\GroupTable::getList(array(",
-            "\t'select' => array('NAME'),",
-            "\t'filter' => array('ID' => '${1:id}')",
+            "\t\"select\" => array(\"NAME\"),",
+            "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
             "))->fetch();",
-            ",",
+            "",
             "foreach(\\$arGroups as \\$arGroup) {",
             "\tvar_export(\\$arGroup);",
             "}"

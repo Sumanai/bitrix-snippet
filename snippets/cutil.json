@@ -2,7 +2,7 @@
     "CUtil.translit": {
         "prefix": "cutiltranslit",
         "body": [
-            "CUtil::translit('${1:text}','${2:lang}',array(...));"
+            "CUtil::translit(\"${1:text}\", \"${2:lang}\", array(${3:...}));"
         ],
         "description": "Преобразует строку с выбранного языка в транслит."
     }

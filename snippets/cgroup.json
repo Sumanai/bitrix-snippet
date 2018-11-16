@@ -8,7 +8,7 @@
             "\t\"C_SORT\"       => 100,",
             "\t\"NAME\"         => \"${1:groupName}\",",
             "\t\"DESCRIPTION\"  => \"${2:desc}\",",
-            "\t\"USER_ID\"      => array('${3:usersID}'),",
+            "\t\"USER_ID\"      => array(\"${3:usersID}\"),",
             ");",
             "\\$id = \\$group->Add(\\$arFields);",
             "if (strlen(\\$rsGroup->LAST_ERROR)>0) echo \\$rsGroup->LAST_ERROR;"
@@ -20,7 +20,7 @@
         "prefix": "cgroupdelete",
         "body": [
             "\\$rsGroup = new CGroup;",
-            "if(!\\$rsGroup->Delete('${1:groupID}')) {",
+            "if(!\\$rsGroup->Delete(\"${1:groupID}\")) {",
             "\techo 'Group Delete';",
             "}"
         ],
@@ -29,7 +29,7 @@
     "CGroup.GetByID": {
         "prefix": "cgroupgetby",
         "body": [
-            "\\$arGroup = CGroup::GetByID('${1:groupID}','Y')->fetch();",
+            "\\$arGroup = CGroup::GetByID(\"${1:groupID}\", \"Y\")->fetch();",
             "if(is_array(\\$arGroup)) {",
             "\tvar_export(\\$arGroup);",
             "}"
@@ -40,8 +40,8 @@
         "prefix": "cgroupgetlist",
         "body": [
             "\\$arFilter = array(",
-            "\t'ID'        => '${1:groupID}',",
-            "\t'ACTIVE'    => 'Y',",
+            "\t\"ID'        => \"${1:groupID}\",",
+            "\t\"ACTIVE'    => \"Y\",",
             "\t//...",
             ");",
             "",
@@ -60,8 +60,8 @@
         "prefix": "cgroupupdate",
         "body": [
             "\\$arFilter = array(",
-            "\t'ID'     => '${1:groupID}',",
-            "\t'NAME'   => '${1:newgroupname}'",
+            "\t\"ID\"     => \"${1:groupID}\",",
+            "\t\"NAME\"   => \"${1:newgroupname}\"",
             ");",
             "",
             "\\$rsGroup = new CGroup;",

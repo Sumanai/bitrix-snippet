@@ -3,8 +3,8 @@
         "prefix": "d7user",
         "body": [
             "\\$arUsers = \\\\Bitrix\\\\Main\\\\UserTable::getList(array(",
-            "\t'select' => array('LOGIN'),",
-            "\t'filter' => array('ID' => '1')",
+            "\t\"select\" => array(\"LOGIN\"),",
+            "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
             "))->fetch();",
             "",
             "foreach(\\$arUsers as \\$arUser) {",

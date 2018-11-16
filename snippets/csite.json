@@ -33,7 +33,7 @@
     "CSite.GetByID": {
         "prefix": "csitegetbyid",
         "body": [
-            "\\$arSite = CSite::GetByID('${1:siteLID}')->fetch();",
+            "\\$arSite = CSite::GetByID(\"${1:siteLID}\")->fetch();",
             "if(is_array(\\$arSite)) {",
             "\tvar_export(\\$arSite);",
             "}"
@@ -43,13 +43,13 @@
     "Csite.Update": {
         "prefix": "csiteupdate",
         "body": [
-            "$arFields = array(",
-            "\t'EMAIL' => '${1:siteemail}',",
-            "\t'NAME'  => '${2:sitename}',",
+            "\\$arFields = array(",
+            "\t\"EMAIL\" => \"${1:siteemail}\",",
+            "\t\"NAME\"  => \"${2:sitename}\",",
             "\t//...",
             ");",
             "\\$rsSite = new CSite;",
-            "\\$rsSite->Update('${3:siteLID}', \\$arFields);",
+            "\\$rsSite->Update(\"${3:siteLID}\", \\$arFields);",
             "if (strlen(\\$rsSite->LAST_ERROR)>0) \\$strError .= \\$rsSite->LAST_ERROR;"
         ],
         "description": "Изменяет существующий сайт."
