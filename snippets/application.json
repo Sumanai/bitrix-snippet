@@ -54,5 +54,54 @@
             "\\$APPLICATION->ShowProperty(\"${1:property_id}\");"
         ],
         "description": "Отображает свойство страницы, учитывая свойства раздела."
+    },
+    "APPLICATION.GetTitle": {
+        "prefix": "APPLIGetTitle",
+        "body": [
+            "\\$APPLICATION->GetTitle(\"${1:property_name}\");"
+        ],
+        "description": "Возвращает заголовок страницы."
+    },
+    "APPLICATION.GetCSS": {
+        "prefix": "APPLIGetCSS",
+        "body": [
+            "\\$APPLICATION->GetCSS(\"${1:external}\");"
+        ],
+        "description": "Возвращает HTML для подключения CSS на странице."
+    },
+    "APPLICATION.GetNavChain": {
+        "prefix": "APPLIGetNavChain",
+        "body": [
+            "\\$APPLICATION->GetNavChain(\"${1:path}\");"
+        ],
+        "description": "Отображает HTML с навигационной цепочкой."
+    },
+    "APPLICATION.GetCurUri": {
+        "prefix": "APPLIGetCurUri",
+        "body": [
+            "\\$APPLICATION->GetCurUri(\"${1:add_params}\", \"${2:get_index_page}\");"
+        ],
+        "description": "Возвращает адрес текущей страницы с параметрами."
+    },
+    "APPLICATION.GetCurPage": {
+        "prefix": "APPLIGetCurPage",
+        "body": [
+            "\\$APPLICATION->GetCurPage(${1|true,false|});"
+        ],
+        "description": "Возвращает адрес текущей страницы без параметров."
+    },
+    "APPLICATION.GetCurPageParam": {
+        "prefix": "APPLIGetCurPageParam",
+        "body": [
+            "\\$APPLICATION->GetCurPageParam(\"${1:add_params}\", array(${2:remove_params}), ${3|true,false|});"
+        ],
+        "description": "Возвращает URL текущей страницы c добавленными новыми и(или) удаленными параметрами."
+    },
+    "APPLICATION.GetCurDir": {
+        "prefix": "GetCurDir",
+        "body": [
+            "\\$APPLICATION->GetCurDir();"
+        ],
+        "description": "Возвращает раздел текущей страницы."
     }
 }
