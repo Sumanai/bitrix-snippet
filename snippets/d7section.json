@@ -5,9 +5,9 @@
             "\\$arSections = \\\\Bitrix\\\\Iblock\\\\SectionTable::getList(array(",
             "\t\"select\" => array(\"NAME\"),",
             "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
-            "))->fetch();",
+            "));",
             "",
-            "foreach(\\$arSections as \\$arSection) {",
+            "while ($arSection = $arSections->fetch()) {",
             "\tvar_export(\\$arSection);",
             "}"
         ],

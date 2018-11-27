@@ -5,9 +5,9 @@
             "\\$arUsers = \\\\Bitrix\\\\Main\\\\UserTable::getList(array(",
             "\t\"select\" => array(\"LOGIN\"),",
             "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
-            "))->fetch();",
+            "));",
             "",
-            "foreach(\\$arUsers as \\$arUser) {",
+            "while ($arUser = $arUsers->fetch()) {",
             "\tvar_export(\\$arUser);",
             "}"
         ],
