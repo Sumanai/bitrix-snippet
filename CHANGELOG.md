@@ -1,6 +1,11 @@
 # Change Log
 
+## [0.1.0] - 2018-12-04
+
+- Add debug
+
 ## [0.0.9] - 2018-11-16
+
 - Fix code style
 - Add some getters in application
 - Reverse changelog
