@@ -115,6 +115,14 @@
                 "language": "php",
                 "path": "./snippets/other.json"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "editor.action.insertSnippet",
+                "key": "alt+s",
+                "mac": "alt+s",
+                "when": "editorHasSelection"
+            }
         ]
     }
 }
