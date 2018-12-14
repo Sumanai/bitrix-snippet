@@ -98,10 +98,59 @@
         "description": "Возвращает URL текущей страницы c добавленными новыми и(или) удаленными параметрами."
     },
     "APPLICATION.GetCurDir": {
-        "prefix": "GetCurDir",
+        "prefix": "APPLIGetCurDir",
         "body": [
             "\\$APPLICATION->GetCurDir();"
         ],
         "description": "Возвращает раздел текущей страницы."
+    },
+    "APPLICATION.GetProperty": {
+        "prefix": "APPLIGetProperty",
+        "body": [
+            "\\$APPLICATION->GetProperty(\"${1:property_id}\");"
+        ],
+        "description": "Возвращает свойство страницы, учитывая свойства раздела."
+    },
+    "APPLICATION.GetPageProperty": {
+        "prefix": "APPLIGetPageProperty",
+        "body": [
+            "\\$APPLICATION->GetPageProperty(\"${1:property_id}\");"
+        ],
+        "description": "Возвращает свойство страницы."
+    },
+    "APPLICATION.GetDirProperty": {
+        "prefix": "APPLIGetDirProperty",
+        "body": [
+            "\\$APPLICATION->GetDirProperty(\"${1:property_id}\");"
+        ],
+        "description": "Возвращает свойство раздела."
+    },
+    "APPLICATION.GetPagePropertyList": {
+        "prefix": "APPLIGetPagePropertyList",
+        "body": [
+            "\\$APPLICATION->GetPagePropertyList();"
+        ],
+        "description": "Возвращает массив всех свойств страницы."
+    },
+    "APPLICATION.GetDirPropertyList": {
+        "prefix": "APPLIGetDirPropertyList",
+        "body": [
+            "\\$APPLICATION->GetDirPropertyList();"
+        ],
+        "description": "Возвращает массив всех свойств раздела. Необязательный первый параметр позволяет получить свойство любого каталога."
+    },
+    "APPLICATION.SetPageProperty": {
+        "prefix": "APPLISetPageProperty",
+        "body": [
+            "\\$APPLICATION->SetPageProperty(\"${1:property_id}, ${2:property_value}\");"
+        ],
+        "description": "Устанавливает свойство страницы."
+    },
+    "APPLICATION.SetDirProperty": {
+        "prefix": "APPLISetDirProperty",
+        "body": [
+            "\\$APPLICATION->SetDirProperty(\"${1:property_id}, ${2:property_value}\");"
+        ],
+        "description": "Устанавливает свойство раздела. Необязательный третий параметр позволяет получить свойства любого каталога."
     }
 }
