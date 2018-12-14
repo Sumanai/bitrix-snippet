@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.1.1] - 2018-12-14
+
+- Fix d7 getList
+- Update README
+- Add page property methods
+- Add d7 asset snippets
+- Add Alt+S key bind for insert snippet when text selected
+
 ## [0.1.0] - 2018-12-04
 
 - Add debug
