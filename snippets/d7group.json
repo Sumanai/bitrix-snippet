@@ -7,7 +7,7 @@
             "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
             "));",
             "",
-            "while ($arGroup = $arGroups->fetch()) {",
+            "while (\\$arGroup = \\$arGroups->fetch()) {",
             "\tvar_export(\\$arGroup);",
             "}"
         ],

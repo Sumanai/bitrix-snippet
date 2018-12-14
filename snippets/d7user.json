@@ -7,7 +7,7 @@
             "\t\"filter\" => array(\"ID\" => \"${1:id}\")",
             "));",
             "",
-            "while ($arUser = $arUsers->fetch()) {",
+            "while (\\$arUser = \\$arUsers->fetch()) {",
             "\tvar_export(\\$arUser);",
             "}"
         ],
