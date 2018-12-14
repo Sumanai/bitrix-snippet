@@ -1,5 +1,7 @@
 # bitrix-snippet README
 
+[![VS Code Marketplace](https://vsmarketplacebadge.apphb.com/version-short/sumanai.bitrix-snippet.svg) ![Installs](https://vsmarketplacebadge.apphb.com/installs/sumanai.bitrix-snippet.svg)](https://marketplace.visualstudio.com/items?itemName=sumanai.bitrix-snippet) [![Donate](https://img.shields.io/badge/donate-paypal-brightgreen.svg)](https://paypal.me/Sumanai)
+
 Bitrix CMF snippets for Visual Studio Code Editor, ported to [bitrix-snippets](https://atom.io/packages/bitrix-snippets) , thanks anyzicky
 
 ## Usage
