@@ -142,14 +142,14 @@
     "APPLICATION.SetPageProperty": {
         "prefix": "APPLISetPageProperty",
         "body": [
-            "\\$APPLICATION->SetPageProperty(\"${1:property_id}, ${2:property_value}\");"
+            "\\$APPLICATION->SetPageProperty(\"${1:property_id}\", \"${2:property_value}\");"
         ],
         "description": "Устанавливает свойство страницы."
     },
     "APPLICATION.SetDirProperty": {
         "prefix": "APPLISetDirProperty",
         "body": [
-            "\\$APPLICATION->SetDirProperty(\"${1:property_id}, ${2:property_value}\");"
+            "\\$APPLICATION->SetDirProperty(\"${1:property_id}\", \"${2:property_value}\");"
         ],
         "description": "Устанавливает свойство раздела. Необязательный третий параметр позволяет получить свойства любого каталога."
     }
