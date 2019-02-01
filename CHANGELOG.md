@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.1.2] - 2019-02-01
+
+- Fix appli error
+- Add ResizeImageGet
+
 ## [0.1.1] - 2018-12-14
 
 - Fix d7 getList
