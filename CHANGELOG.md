@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.3] - 2019-02-11
+
+- Fix CIBlockElementAdd
+
 ## [0.1.2] - 2019-02-01
 
 - Fix appli error
