@@ -2,7 +2,7 @@
     "CIBlockElement.Add": {
         "prefix": "CIBlockElementAdd",
         "body": [
-            "\\$rsIB = new CIBlockElement;",
+            "\\$rsElement = new CIBlockElement;",
             "\\$arFields = array(",
             "\t\"ACTIVE\"            => \"Y\",",
             "\t\"NAME\"              => \"${1:name}\",",
@@ -10,8 +10,8 @@
             "\t\t//propertys array ...",
             "\t)",
             ");",
-            "if(!\\$id = \\$rsEl->Add(\\$arFields)) {",
-            "\techo \"Error:\" . \\$rsEl->LAST_ERROR;",
+            "if(!\\$id = \\$rsElement->Add(\\$arFields)) {",
+            "\techo \"Error:\" . \\$rsElement->LAST_ERROR;",
             "}"
         ],
         "description": "Добавляет новый элемент."
