@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.4] - 2019-02-12
+
+- Add d7 language
+
 ## [0.1.3] - 2019-02-11
 
 - Fix CIBlockElementAdd
