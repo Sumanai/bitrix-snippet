@@ -1,0 +1,32 @@
+{
+    "D7LangSingle": {
+        "prefix": "D7LangSingle",
+        "body": [
+            "\\Bitrix\\Main\\Localization\\Loc::getMessage(\"${1:VARIABLE}\")"
+        ],
+        "description": "Метод возвращает по коду соответствующее сообщение на текущем языке."
+    },
+    "D7LangUse": {
+        "prefix": "D7LangUse",
+        "body": [
+            "use \\Bitrix\\Main\\Localization\\Loc;",
+            "${0}"
+        ],
+        "description": "Подключение класса переводов."
+    },
+    "D7LangLoad": {
+        "prefix": "D7LangLoad",
+        "body": [
+            "Loc::loadMessages(__FILE__);",
+            "${0}"
+        ],
+        "description": "Метод загружает языковые сообщения для указанного файла. Использовать с use."
+    },
+    "D7Lang": {
+        "prefix": "D7Lang",
+        "body": [
+            "Loc::getMessage(\"${1:VARIABLE}\")"
+        ],
+        "description": "Метод возвращает по коду соответствующее сообщение на текущем языке. Использовать с use."
+    }
+}

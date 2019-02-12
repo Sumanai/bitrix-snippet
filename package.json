@@ -97,6 +97,10 @@
             },
             {
                 "language": "php",
+                "path": "./snippets/d7lang.json"
+            },
+            {
+                "language": "php",
                 "path": "./snippets/d7loader.json"
             },
             {
