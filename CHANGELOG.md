@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.1.5] - 2019-02-21
+
+- Add include file
+- Add default file header
+- Fix CGroup GetList
+- Use var_dump instead print_r  
+- Remove semicolon from application getters
+
 ## [0.1.4] - 2019-02-12
 
 - Add d7 language
