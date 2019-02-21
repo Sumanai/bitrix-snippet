@@ -3,8 +3,7 @@
         "scope": "php",
         "prefix": "user",
         "body": [
-            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";print_r(${1:\\$arResult});echo \"</pre>\";}",
-            "$0"
+            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${1:\\$arResult});echo \"</pre>\";}"
         ],
         "description": "Принт переменной только для админа."
     }
