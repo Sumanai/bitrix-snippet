@@ -40,8 +40,8 @@
         "prefix": "cgroupgetlist",
         "body": [
             "\\$arFilter = array(",
-            "\t\"ID'        => \"${1:groupID}\",",
-            "\t\"ACTIVE'    => \"Y\",",
+            "\t\"ID\"        => \"${1:groupID}\",",
+            "\t\"ACTIVE\"    => \"Y\",",
             "\t//...",
             ");",
             "",
