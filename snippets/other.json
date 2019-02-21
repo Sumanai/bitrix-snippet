@@ -6,5 +6,13 @@
             "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${1:\\$arResult});echo \"</pre>\";}"
         ],
         "description": "Принт переменной только для админа."
+    },
+    "Bitrix.FileHeader": {
+        "prefix": "bxHead",
+        "body": [
+            "if(!defined(\"B_PROLOG_INCLUDED\") || B_PROLOG_INCLUDED!==true)die();",
+            "$0"
+        ],
+        "description": "Стандартный заголовок файла."
     }
 }
