@@ -152,5 +152,37 @@
             "\\$APPLICATION->SetDirProperty(\"${1:property_id}\", \"${2:property_value}\");"
         ],
         "description": "Устанавливает свойство раздела. Необязательный третий параметр позволяет получить свойства любого каталога."
+    },
+    "APPLICATION.main.include": {
+        "prefix": "APPLIMainInc",
+        "body": [
+            "\\$APPLICATION->IncludeComponent(",
+            "\t\"bitrix:main.include\",",
+            "\t\"\",",
+            "\tArray(",
+            "\t\t\"AREA_FILE_SHOW\" => \"file\",",
+            "\t\t\"AREA_FILE_SUFFIX\" => \"inc\",",
+            "\t\t\"EDIT_TEMPLATE\" => \"\",",
+            "\t\t\"PATH\" => \"/include/${1:file.php}\"",
+            "\t)",
+            ");",
+            "$0"
+        ],
+        "description": "Подключение файла через компонент."
+    },
+    "test2": {
+        "prefix": "APPLIIncFile",
+        "body": [
+            "\\$APPLICATION->IncludeFile(",
+            "\t\"${1:file.php}\",",
+            "\tArray(),",
+            "\tArray(",
+            "\t\t\"MODE\"      => \"${2|html,text,php|}\",", 
+            "\t\t\"NAME\"      => \"${3:name}\",",
+            "\t\t\"TEMPLATE\"  => \"page_inc.php\"",
+            "\t)",
+            ");"
+        ],
+        "description": "Подключение файла."
     }
 }
