@@ -79,14 +79,14 @@
     "APPLICATION.GetCurUri": {
         "prefix": "APPLIGetCurUri",
         "body": [
-            "\\$APPLICATION->GetCurUri(\"${1:add_params}\", \"${2:get_index_page}\");"
+            "\\$APPLICATION->GetCurUri(\"${1:add_params}\", \"${2:get_index_page}\")"
         ],
         "description": "Возвращает адрес текущей страницы с параметрами."
     },
     "APPLICATION.GetCurPage": {
         "prefix": "APPLIGetCurPage",
         "body": [
-            "\\$APPLICATION->GetCurPage(${1|true,false|});"
+            "\\$APPLICATION->GetCurPage(${1|true,false|})"
         ],
         "description": "Возвращает адрес текущей страницы без параметров."
     },
@@ -100,42 +100,42 @@
     "APPLICATION.GetCurDir": {
         "prefix": "APPLIGetCurDir",
         "body": [
-            "\\$APPLICATION->GetCurDir();"
+            "\\$APPLICATION->GetCurDir()"
         ],
         "description": "Возвращает раздел текущей страницы."
     },
     "APPLICATION.GetProperty": {
         "prefix": "APPLIGetProperty",
         "body": [
-            "\\$APPLICATION->GetProperty(\"${1:property_id}\");"
+            "\\$APPLICATION->GetProperty(\"${1:property_id}\")"
         ],
         "description": "Возвращает свойство страницы, учитывая свойства раздела."
     },
     "APPLICATION.GetPageProperty": {
         "prefix": "APPLIGetPageProperty",
         "body": [
-            "\\$APPLICATION->GetPageProperty(\"${1:property_id}\");"
+            "\\$APPLICATION->GetPageProperty(\"${1:property_id}\")"
         ],
         "description": "Возвращает свойство страницы."
     },
     "APPLICATION.GetDirProperty": {
         "prefix": "APPLIGetDirProperty",
         "body": [
-            "\\$APPLICATION->GetDirProperty(\"${1:property_id}\");"
+            "\\$APPLICATION->GetDirProperty(\"${1:property_id}\")"
         ],
         "description": "Возвращает свойство раздела."
     },
     "APPLICATION.GetPagePropertyList": {
         "prefix": "APPLIGetPagePropertyList",
         "body": [
-            "\\$APPLICATION->GetPagePropertyList();"
+            "\\$APPLICATION->GetPagePropertyList()"
         ],
         "description": "Возвращает массив всех свойств страницы."
     },
     "APPLICATION.GetDirPropertyList": {
         "prefix": "APPLIGetDirPropertyList",
         "body": [
-            "\\$APPLICATION->GetDirPropertyList();"
+            "\\$APPLICATION->GetDirPropertyList()"
         ],
         "description": "Возвращает массив всех свойств раздела. Необязательный первый параметр позволяет получить свойство любого каталога."
     },
