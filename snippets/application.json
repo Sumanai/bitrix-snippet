@@ -170,7 +170,7 @@
         ],
         "description": "Подключение файла через компонент."
     },
-    "test2": {
+    "APPLICATION.IncludeFile": {
         "prefix": "APPLIIncFile",
         "body": [
             "\\$APPLICATION->IncludeFile(",
