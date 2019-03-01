@@ -6,7 +6,9 @@ Bitrix CMF snippets for Visual Studio Code Editor, ported to [bitrix-snippets](h
 
 ## Usage
 
-Just start write something like this - CIBlock and press Enter
+Just start write something like this - CIBlock and press Enter.
+Use d7 prefix to use new [D7 API](https://dev.1c-bitrix.ru/api_d7/).
+Use bx prefix for main snippets, such as include prolog.
 
 ## Installation
 
