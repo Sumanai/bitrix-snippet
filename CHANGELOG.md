@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.0] - 2019-03-01
+
+- Experimental hint functions
+- Update readme
+- Update user snippet, add snippets for include prolog and epilog
+- Small fix
+
 ## [0.1.5] - 2019-02-21
 
 - Add include file
