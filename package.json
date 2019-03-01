@@ -1,132 +1,148 @@
 {
-    "name": "bitrix-snippet",
-    "displayName": "Bitrix Snippet",
-    "description": "",
-    "version": "0.1.5",
-    "publisher": "Sumanai",
-    "bugs": {
-        "url": "https://github.com/Sumanai/bitrix-snippet/issues",
-        "email": "sumanai@ya.ru"
-    },
-    "engines": {
-        "vscode": "^1.28.0"
-    },
-    "categories": [
-        "Snippets"
-    ],
-     "repository": {
-        "type": "git",
-        "url": "https://github.com/Sumanai/bitrix-snippet.git"
-    },
-    "contributes": {
-        "snippets": [{
-                "language": "php",
-                "path": "./snippets/application.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cagent.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cevent.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cfile.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cgroup.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/ciblock.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/ciblockelement.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/ciblockproperty.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/ciblocksection.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cmodule.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/csite.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cuser.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/cutil.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7asset.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7autload.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7config.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7debug.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7element.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7group.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7lang.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7loader.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7option.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7section.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/d7user.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/other.json"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "editor.action.insertSnippet",
-                "key": "alt+s",
-                "mac": "alt+s",
-                "when": "editorHasSelection"
-            }
-        ]
-    }
+	"name": "bitrix-snippet",
+	"displayName": "Bitrix Snippet",
+	"description": "",
+	"version": "0.1.5",
+	"publisher": "Sumanai",
+	"bugs": {
+		"url": "https://github.com/Sumanai/bitrix-snippet/issues",
+		"email": "sumanai@ya.ru"
+	},
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Sumanai/bitrix-snippet.git"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/application.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cagent.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cevent.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cfile.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cgroup.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/ciblock.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/ciblockelement.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/ciblockproperty.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/ciblocksection.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cmodule.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/csite.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cuser.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/cutil.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7asset.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7autload.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7config.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7debug.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7element.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7group.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7lang.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7loader.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7option.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7section.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/d7user.json"
+			},
+			{
+				"language": "php",
+				"path": "./snippets/other.json"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "editor.action.insertSnippet",
+				"key": "alt+s",
+				"mac": "alt+s",
+				"when": "editorHasSelection"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Bitrix snippets configuration",
+			"properties": {
+				"bitrix-snippet.hint-function": {
+					"type": "boolean",
+					"default": false,
+					"description": "Подключать в рабочую область каталог с файлами-заглушками, содержащими описания стандартных функций."
+				}
+			}
+		}
+	},
+	"main": "./extension.js",
+	"activationEvents": [
+		"onLanguage:php"
+	]
 }
