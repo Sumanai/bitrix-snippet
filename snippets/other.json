@@ -3,7 +3,7 @@
         "scope": "php",
         "prefix": "user",
         "body": [
-            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${1:\\$arResult});echo \"</pre>\";}"
+            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${TM_SELECTED_TEXT:${1:\\$arResult}});echo \"</pre>\";}"
         ],
         "description": "Принт переменной только для админа."
     },
@@ -14,5 +14,51 @@
             "$0"
         ],
         "description": "Стандартный заголовок файла."
+    },
+    "Bitrix.Prolog": {
+        "prefix": "bxProlog",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/header.php\");",
+            "$0"
+        ],
+        "description": "Подключение пролога."
+    },
+    "Bitrix.PrologBefore": {
+        "prefix": "bxPrologBefore",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/modules/main/include/prolog_before.php\");",
+            "$0"
+        ],
+        "description": "Подключение служебной части пролога."
+    },
+    "Bitrix.PrologAfter": {
+        "prefix": "bxPrologAfter",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/modules/main/include/prolog_after.php\");",
+            "$0"
+        ],
+        "description": "Подключение визуальной части пролога."
+    },
+    "Bitrix.Epilog": {
+        "prefix": "bxEpilog",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/footer.php\");"
+        ],
+        "description": "Подключение эпилога."
+    },
+    "Bitrix.EpilogBefore": {
+        "prefix": "bxEpilogBefore",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/modules/main/include/epilog_before.php\");",
+            "$0"
+        ],
+        "description": "Подключение визуальной части эпилога."
+    },
+    "Bitrix.EpilogAfter": {
+        "prefix": "bxEpilogAfter",
+        "body": [
+            "require(\\$_SERVER[\"DOCUMENT_ROOT\"].\"/bitrix/modules/main/include/epilog_after.php\");"
+        ],
+        "description": "Подключение служебной части эпилога."
     }
 }
