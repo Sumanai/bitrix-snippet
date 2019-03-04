@@ -68,7 +68,7 @@ class CMain {
      * @param boolean $strip_tags Если значение - "true", то из заголовка страницы будут удалены все HTML теги.
      * @return void
      */
-    public function GetTitle(string $property_name, bool $strip_tags = false): void {}
+    public function GetTitle(string $property_name, bool $strip_tags = false): string {return '';}
 
     /**
      * Возвращает заголовок страницы.
@@ -76,7 +76,7 @@ class CMain {
      * @param boolean $bXhtmlStyle Параметр, устанавливающий, по какому стандарту оформляются HTML-теги. Если значение true, то теги выводятся по стандарту XHTML (<meta />), иначе по стандарту HTML 4 (<meta>).
      * @return void
      */
-    public function GetCSS(bool $external = true, bool $bXhtmlStyle = true): void {}
+    public function GetCSS(bool $external = true, bool $bXhtmlStyle = true): string {return '';}
 
     /**
      * Возвращает HTML представляющий из себя навигационную цепочку.
@@ -87,7 +87,9 @@ class CMain {
      * @param boolean $ShowIcons Флаг отображения иконки.
      * @return void
      */
-    public function GetNavChain($path = false, int $NumFrom = 0, $NavChainPath = false, bool $IncludeOnce = false, bool $ShowIcons = true): void {}
+    public function GetNavChain($path = false, int $NumFrom = 0, $NavChainPath = false, bool $IncludeOnce = false, bool $ShowIcons = true): string {
+        return '';
+    }
 
 
     /**
@@ -96,7 +98,7 @@ class CMain {
      * @param string $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return void
      */
-    public function GetCurUri(string $add_params = "", ?string $get_index_page=null): void {}
+    public function GetCurUri(string $add_params = "", ?string $get_index_page=null): string {return '';}
 
     /**
      * Возвращает путь к текущей странице относительно корня.
