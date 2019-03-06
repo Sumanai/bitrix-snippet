@@ -1,5 +1,19 @@
 # Change Log
 
+## [0.2.2] - 2019-03-06
+
+- Update readme, add russian translation for readme
+- Fix CIBlockElement
+- Add logo
+- Update readme
+- Add EventManager and CModule class and function
+- Fix CDBResult code style
+- Add all CUser public function
+- Add CUser stub
+- Add CFile stub
+- Add CDBResult stub
+- Fix CMain stubs
+
 ## [0.2.1] - 2019-03-01
 
 - Add bxTemplateGlobalVars snippet
