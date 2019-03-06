@@ -4,6 +4,10 @@
 
 Bitrix CMF snippets for Visual Studio Code Editor, ported to [bitrix-snippets](https://atom.io/packages/bitrix-snippets) , thanks anyzicky
 
+*Read this in other languages: [English](README.md), [Русский](README.ru.md).*
+
+![Usage](images/snippet.gif)
+
 ## Usage
 
 Just start write something like this - CIBlock and press Enter.
