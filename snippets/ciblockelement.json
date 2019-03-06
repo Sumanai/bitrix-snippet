@@ -19,14 +19,14 @@
     "CIBlockElement.Delete": {
         "prefix": "CIBlockElementDel",
         "body": [
-            "CIBlockElement::Delete('${1:iblockID}');"
+            "CIBlockElement::Delete('${1:ID}');"
         ],
         "description": "Удаляет элемент из информационного блока."
     },
     "CIBlockElement.GetByID": {
         "prefix": "CIBlockElementID",
         "body": [
-            "\\$arElement = CIBlockElement::GetByID('${1:iblockID}')->fetch();",
+            "\\$arElement = CIBlockElement::GetByID('${1:ID}')->fetch();",
             "if(is_array(\\$arElement)) {",
             "\t//body ...",
             "}"
