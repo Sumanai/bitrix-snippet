@@ -4,6 +4,7 @@
 	"description": "",
 	"version": "0.2.1",
 	"publisher": "Sumanai",
+	"icon": "images/bitrix_logo.png",
 	"bugs": {
 		"url": "https://github.com/Sumanai/bitrix-snippet/issues",
 		"email": "sumanai@ya.ru"
