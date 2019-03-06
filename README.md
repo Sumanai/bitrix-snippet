@@ -10,6 +10,8 @@ Just start write something like this - CIBlock and press Enter.
 Use d7 prefix to use new [D7 API](https://dev.1c-bitrix.ru/api_d7/).
 Use bx prefix for main snippets, such as include prolog.
 
+If you are not working with the Bitrix catalog, but want to receive hints on the main classes and functions, set the Hint-function option to true in the Bitrix snippet settings.
+
 ## Installation
 
 1. Install Visual Studio Code 1.28.0 or higher
@@ -21,19 +23,4 @@ Use bx prefix for main snippets, such as include prolog.
 
 ### TODO
 
-- [x] add CGroup
-- [x] add CSite
-- [x] add CUser
-- add snippets for D7
-- ...more
-
-### d7 ORM getList for
-
-- [x] D7 Config
-- [x] D7 Option
-- [x] D7 Element
-- [x] D7 Register autoload
-- [x] D7 Group
-- [x] D7 User
-- [x] D7 Section
-- ...more
+- [] add stubs for all class
