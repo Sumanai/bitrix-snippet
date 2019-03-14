@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.3] - 2019-03-14
+
+- Bitrix way for CMain class, add all public function
+- Spell check
+- Add vscodeignore
+
 ## [0.2.2] - 2019-03-06
 
 - Update readme, add russian translation for readme
