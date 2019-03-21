@@ -1,4 +1,12 @@
 {
+    "D7AssetUse": {
+        "prefix": "D7AssetUse",
+        "body": [
+            "use \\Bitrix\\Main\\Page\\Asset;",
+            "${0}"
+        ],
+        "description": "Подключение класса стилей."
+    },
     "D7Asset.addString": {
         "prefix": "d7addString",
         "body": [
