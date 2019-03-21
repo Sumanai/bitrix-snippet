@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.4] - 2019-03-21
+
+- Bitrix way for CDBResult, add CDatabase stub
+- Add Asset stubs
+- Add Asset use in snippet
+
 ## [0.2.3] - 2019-03-14
 
 - Bitrix way for CMain class, add all public function
