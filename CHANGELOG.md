@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.5] - 2019-03-29
+
+- Fix main
+- Add CBitrixComponent and CBitrixComponentTemplate
+- Fix readme
+
 ## [0.2.4] - 2019-03-21
 
 - Bitrix way for CDBResult, add CDatabase stub
