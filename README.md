@@ -27,4 +27,4 @@ If you are not working with the Bitrix catalog, but want to receive hints on the
 
 ### TODO
 
-- [] add stubs for all class
+- [ ] add stubs for all class
