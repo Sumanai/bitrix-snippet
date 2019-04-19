@@ -12,4 +12,3 @@ class CFilterQuery extends CAllFilterQuery
 
 class CLang extends CSite
 { }
-

@@ -161,7 +161,8 @@ class CAllMain
         string $use_default_level = "Y",
         string $max_right_for_super_admin = "Y",
         $site_id = false
-    ): string {
+    ): string
+    {
         return '';
     }
 
@@ -181,7 +182,8 @@ class CAllMain
         string $use_default_role = "Y",
         string $max_role_for_super_admin = "Y",
         $site_id = false
-    ): string {
+    ): string
+    {
         return '';
     }
 
@@ -292,7 +294,7 @@ class CAllMain
      * @param arrray|null $arOptions Необязательный. По умолчанию - "null".
      * @return void
      */
-    public function SetTitle(string $title, ? arrray $arOptions = null): void
+    public function SetTitle(string $title, ?arrray $arOptions = null): void
     { }
 
     /**
@@ -400,7 +402,7 @@ class CAllMain
      * @param string $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return void
      */
-    public function GetCurUri(string $add_params = "", ? string $get_index_page = null): string
+    public function GetCurUri(string $add_params = "", ?string $get_index_page = null): string
     {
         return '';
     }
@@ -410,7 +412,7 @@ class CAllMain
      * @param boolean $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return string Путь к текущей странице относительно корня.
      */
-    public function GetCurPage(? bool $get_index_page = null): string
+    public function GetCurPage(?bool $get_index_page = null): string
     {
         return '';
     }
@@ -422,7 +424,7 @@ class CAllMain
      * @param boolean $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return string Путь к текущей странице относительно корня.
      */
-    public function GetCurPageParam(string $add_params = "", array $remove_params = array(), ? bool $get_index_page = null): string
+    public function GetCurPageParam(string $add_params = "", array $remove_params = array(), ?bool $get_index_page = null): string
     {
         return '';
     }
@@ -506,7 +508,7 @@ class CAllMain
      * @param string $property_value Значение свойства.
      * @param array $Options Необязательный. По умолчанию "null".
      */
-    public function SetPageProperty(string $property_id, string $property_value, ? array $Options = null): void
+    public function SetPageProperty(string $property_id, string $property_value, ?array $Options = null): void
     { }
 
     /**
@@ -515,7 +517,7 @@ class CAllMain
      * @param string $property_value Значение свойства.
      * @param array $path Путь до страницы. По умолчанию - "false", то есть текущий.
      */
-    public function SetDirProperty(string $property_id, string $property_value, ? bool $path = false): void
+    public function SetDirProperty(string $property_id, string $property_value, ?bool $path = false): void
     { }
 
     /**
@@ -579,7 +581,8 @@ class CAllMain
         $spread = true,
         bool $name_prefix = false,
         bool $httpOnly = false
-    ): void { }
+    ): void
+    { }
 
     /**
      * Возвращает значение cookie.
@@ -688,7 +691,7 @@ class CAllMain
      * @param string|boolean $cur_host Имя домена. По умолчанию - текущий домен.
      * @return array
      */
-    public function GetSiteByDir($cur_dir=false, $cur_host=false): array
+    public function GetSiteByDir($cur_dir = false, $cur_host = false): array
     {
         return [];
     }
@@ -703,7 +706,7 @@ class CAllMain
      * @param boolean $do_die Если значение "true" - то страница будет завершена после вывода формы и (опционально) эпилога, "false" - страница прерываться не будет.
      * @return void
      */
-    public function AuthForm($mess, bool $show_prolog=true, bool $show_epilog=true, $not_show_links="N", bool $do_die=true)
+    public function AuthForm($mess, bool $show_prolog = true, bool $show_epilog = true, $not_show_links = "N", bool $do_die = true)
     { }
 
     /**
@@ -775,6 +778,116 @@ class CAllMain
         return false;
     }
 }
+
+class CAllSite
+{
+    /**
+     * Метод проверяет, находимся ли мы в данной папке.
+     *
+     * @param string $Dir Директория сайта
+     * @return boolean
+     */
+    public static function InDir(string $Dir): bool
+    {
+        return false;
+    }
+
+    /**
+     * Метод проверяет, состоит ли текущий пользователь в указанных группах.
+     *
+     * @param array $arGroups Массив, в котором указываются ИД групп.
+     * @return boolean
+     */
+    public static function InGroup(array $arGroups): bool
+    {
+        return false;
+    }
+
+    /**
+     * Возвращает формат даты (времени) сайта.
+     *
+     * @param string $type Тип формата. Допустимы следующие значения:
+     * FULL - для дата-время
+     * SHORT - для даты
+     * @param boolean $lang ID сайта. По умолчанию используется ID текущего сайта.
+     * @param boolean $bSearchInSitesOnly Если переменная определена в true, то в административной части будет использован не формат языка административной части, а сайта по умолчанию.
+     * @return string
+     */
+    public static function GetDateFormat(
+        string $type = "FULL",
+        $lang = false,
+        $bSearchInSitesOnly = false
+    ): string
+    {
+        return '';
+    }
+
+    /**
+     * Метод добавляет новый сайт. Возвращает ID вставленного сайта. При возникновении ошибки метод вернет false, а в свойстве LAST_ERROR объекта будет содержаться текст ошибки.
+     *
+     * @param array $arFields Массив значений полей вида array("поле"=>"значение" [, ...]). 
+     * @return mixed
+     */
+    public function Add(array $arFields)
+    { }
+
+    /**
+     * Метод изменяет параметры сайта. Возвращает "true", если изменение прошло успешно, при возникновении ошибки метод вернет "false", а в свойстве LAST_ERROR объекта будет содержаться текст ошибки.
+     *
+     * @param integer $ID ID сайта.
+     * @param array $arFields Массив значений полей вида array("поле"=>"значение" [, ...]).
+     * @return boolean
+     */
+    public function Update(int $ID, array $arFields): bool
+    {
+        return false;
+    }
+
+    /**
+     * Метод удаляет сайт. Если удаление успешно, то возвращает объект CDBResult, иначе "false".
+     *
+     * @param string $ID ID удаляемого сайта.
+     * @return mixed
+     */
+    public static function Delete(string $ID)
+    { }
+
+    /**
+     * Получение списка шаблонов конкретного сайта.
+     *
+     * @param mixed $site_id Идентификатор сайта, список шаблонов которого нужно получить.
+     * @return mixed
+     */
+    public static function GetTemplateList($site_id)
+    { }
+
+    /**
+     * Возвращает список сайтов в виде объекта класса _CLangDBResult.
+     *
+     * @param string $by По какому полю сортируем.
+     * @param string $order Порядок сортировки.
+     * @param array $arFilter Массив вида array("фильтруемое поле"=>"значение" [, ...]).
+     * @return _CLangDBResult
+     */
+    public static function GetList(&$by, &$order, $arFilter = array()): _CLangDBResult
+    {
+        return new _CLangDBResult([]);
+    }
+
+    /**
+     * Возвращает информацию по сайту в виде объекта класса _CLangDBResult.
+     *
+     * @param string $ID ID сайта.
+     * @return _CLangDBResult
+     */
+    public static function GetByID(string $ID): _CLangDBResult
+    {
+        return new _CLangDBResult([]);
+    }
+}
+
+class _CLangDBResult extends CDBResult
+{ }
 
 
 class CApplicationException
