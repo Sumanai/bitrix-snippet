@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.6] - 2019-04-19
+
+- Add CSite stubs
+
 ## [0.2.5] - 2019-03-29
 
 - Fix main
