@@ -84,7 +84,7 @@ class CBitrixComponentTemplate
      *
      * @see CBitrixComponentTemplate::Init
      */
-    public function IsInTheme(): ?boolean
+    public function IsInTheme(): ?bool
     {
         return false;
     }
