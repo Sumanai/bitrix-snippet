@@ -1,0 +1,15 @@
+{
+    "D7CacheCode": {
+        "prefix": "d7cachecode",
+        "body": [
+            "\\$cache = \\\\Bitrix\\\\Main\\\\Data\\\\Cache::createInstance();",
+            "if (\\$cache->initCache(${1:7200}, ${2:\"cache_id\"}, ${3:\"cache_dir\"})) {",
+            "\t\\$vars = \\$cache->getVars();",
+            "}",
+            "elseif (\\$cache->startDataCache()) {",
+            "\t${2:${TM_SELECTED_TEXT://yourcode}}",
+            "\t\\$cache->endDataCache(\\$vars);",
+            "}"
+        ]
+    }
+}

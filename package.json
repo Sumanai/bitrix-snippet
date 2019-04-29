@@ -20,8 +20,7 @@
 		"url": "https://github.com/Sumanai/bitrix-snippet.git"
 	},
 	"contributes": {
-		"snippets": [
-			{
+		"snippets": [{
 				"language": "php",
 				"path": "./snippets/application.json"
 			},
@@ -83,6 +82,10 @@
 			},
 			{
 				"language": "php",
+				"path": "./snippets/d7cache.json"
+			},
+			{
+				"language": "php",
 				"path": "./snippets/d7config.json"
 			},
 			{
@@ -122,14 +125,12 @@
 				"path": "./snippets/other.json"
 			}
 		],
-		"keybindings": [
-			{
-				"command": "editor.action.insertSnippet",
-				"key": "alt+s",
-				"mac": "alt+s",
-				"when": "editorHasSelection"
-			}
-		],
+		"keybindings": [{
+			"command": "editor.action.insertSnippet",
+			"key": "alt+s",
+			"mac": "alt+s",
+			"when": "editorHasSelection"
+		}],
 		"configuration": {
 			"type": "object",
 			"title": "Bitrix snippets configuration",
