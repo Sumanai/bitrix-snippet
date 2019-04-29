@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.7] - 2019-04-29
+
+- Add cache snippet and stubs
+- Small fix
+- Add CIBlock stubs
+
 ## [0.2.6] - 2019-04-19
 
 - Add CSite stubs
