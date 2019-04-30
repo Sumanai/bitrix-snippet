@@ -119,6 +119,11 @@ abstract class CAllDBResult {
     /** Равен "true", если в данный момент открыта последняя страница в постраничной навигации (доступен только после CDBResult::NavStart). */
     public $nEndPage = 0;
 
+    /**
+     * Делает выборку значений полей в массив. Возвращает массив вида Array("поле"=>"значение" [, ...]) и передвигает курсор на следующую запись. Если достигнута последняя запись (или в результате нет ни одной записи) - метод вернет "false".
+     *
+     * @return mixed
+     */
     abstract public function Fetch();
 
     /**
@@ -194,13 +199,30 @@ abstract class CAllDBResult {
     public function ExtractFields(string $prefix = "str_", bool $encode = true)
     { }
 
+    /**
+     * Метод возвращает название поля по его номеру.
+     *
+     * @param integer $iCol Номер поля.
+     * @return mixed
+     */
     abstract public function FieldName($iCol);
 
-    abstract public function FieldsCount();
+    /**
+     * Метод возвращает количество полей результата выборки.
+     *
+     * @return mixed
+     */
+    abstract public function FieldsCount(): int;
 
     abstract public function SelectedRowsCount();
 
-    abstract public function AffectedRowsCount();
+    /**
+     * Метод возвращает количество выбранных записей (выборка записей осуществляется с помощью SQL-команды "SELECT ...").
+     * Примечание. Для Oracle версии данный метод будет корректно работать только после вызова CDBResult::NavStart, либо если достигнут конец (последняя запись) выборки.
+     *
+     * @return integer
+     */
+    abstract public function AffectedRowsCount(): int;
 
     /**
      * Метод инициализирует объект класса CDBResult значениями из массива.
