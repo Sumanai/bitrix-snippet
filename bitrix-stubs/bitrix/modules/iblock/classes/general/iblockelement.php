@@ -157,6 +157,7 @@ class CAllIBlockElement
      * @param boolean $extMode Признак возврата расширенного числа полей.
      * @param array $propertyFilter Фильтр возвращаемых свойств. Может иметь только 1 ключ - ID. Это массив ID возвращаемых свойств. Если пуст - будут возвращены значения всех свойств инфоблока, включая неактивные.
      * @return CIBlockPropertyResult
+     * @link https://dev.1c-bitrix.ru/api_help/iblock/classes/ciblockelement/getpropertyvalues.php
      */
     public static function GetPropertyValues(
         int $IBLOCK_ID,
@@ -179,6 +180,7 @@ class CAllIBlockElement
      * USE_PROPERTY_ID = Y - ключами массива значений для каждого элемента использовать ID свойств. Иначе - символьные коды.
      * PROPERTY_FIELDS - массив полей СВОЙСТВА, возвращаемых в результате.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/iblock/classes/ciblockelement/getpropertyvaluesarray.php
      */
     public static function GetPropertyValuesArray(
         &$result,
