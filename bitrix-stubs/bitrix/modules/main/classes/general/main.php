@@ -10,6 +10,7 @@ class CAllMain
      * @param string $src путь к скрипту от корня сайта
      * @param boolean $additional
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addheadscript.php
      * @deprecated use Asset::getInstance()->addJs($src, $additional)
      */
     public function AddHeadScript(string $src, $additional = false): void
@@ -22,6 +23,7 @@ class CAllMain
      * @param boolean $bUnique
      * @param string $location
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addheadstring.php
      * @deprecated $Asset::getInstance->addString($str, $bUnique, $location);
      */
     public function AddHeadString(string $str, bool $bUnique = false, string $location = AssetLocation::AFTER_JS_KERNEL): void
@@ -33,6 +35,7 @@ class CAllMain
      * @param string $meta_name Аттрибут "name" мета-тега. Необязательный. По умолчанию равен идентификатору свойства property_id.
      * @param boolean $bXhtmlStyle Параметр, устанавливающий, по какому стандарту оформляются HTML-теги. Если значение true, то теги выводятся по стандарту XHTML (<meta />), иначе по стандарту HTML 4 (<meta>).
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showmeta.php
      */
     public function ShowMeta(string $property_id, string $meta_name = null, bool $bXhtmlStyle = null): void
     { }
@@ -46,6 +49,7 @@ class CAllMain
      * <meta name="meta_name" ...>
      * @param boolean $bXhtmlStyle Параметр, устанавливающий, по какому стандарту оформляются HTML-теги. Если значение true, то теги выводятся по стандарту XHTML (<meta />), иначе по стандарту HTML 4 (<meta>).
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getmeta.php
      */
     public function GetMeta(string $id, $meta_name = false, bool $bXhtmlStyle = true): string
     {
@@ -58,6 +62,7 @@ class CAllMain
      * @param string $abs_path Полный путь к файлу на диске.
      * @param string $strContent Содержимое файла.
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/savefilecontent.php
      */
     public function SaveFileContent(string $abs_path, string $strContent): bool
     {
@@ -69,6 +74,7 @@ class CAllMain
      *
      * @param string $path Абсолютный путь к файлу на диске.
      * @return string|bool
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getfilecontent.php
      */
     public function GetFileContent(string $path)
     { }
@@ -79,6 +85,7 @@ class CAllMain
      * @param string $strFileName Имя файла.
      * @param string|boolean $strDir Путь к разделу с которого нужно начинать поиск файла. Если "false", то поиск будет начинаться с текущего раздела.
      * @return string|boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getfilerecursive.php
      */
     public function GetFileRecursive(string $strFileName, $strDir = false)
     { }
@@ -95,6 +102,7 @@ class CAllMain
      * @param array|boolean $groups Массив ID групп пользователей, для которых необходимо определить права доступа. Если false, то определять группу прав для текущего пользователя.
      * @param boolean $task_mode Необходим для работы с пользовательскими уровнями доступа.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getfileaccesspermission.php
      */
     public function GetFileAccessPermission($path, $groups = false, bool $task_mode = false): string
     {
@@ -114,6 +122,7 @@ class CAllMain
      * В качестве "ID группы пользователей" также может быть задан символ "*", что означает - "для всех групп пользователей". 
      * @param boolean $overwrite Если значение - "true", то существующие права будут перезаписаны.
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/setfileaccesspermission.php
      */
     public function SetFileAccessPermission($path, array $permissions, bool $overwrite = true): bool
     {
@@ -127,6 +136,7 @@ class CAllMain
      * @param string|array $path_to Путь куда копировать.
      * @param boolean $bOverWrite Если значение - "true", то существующие права будут перезаписаны.
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/copyfileaccesspermission.php
      */
     public function CopyFileAccessPermission($path_from, $path_to, bool $bOverWrite = false): bool
     {
@@ -139,6 +149,7 @@ class CAllMain
      * @param string|array $path Путь к файлу или папке относительно корня. В случае многосайтовой версии, если корневой каталог у сайтов разный, то в данном параметре необходимо передавать массив
      * @param array|boolean $arGroups Массив групп для которых удалить права доступа. Если значение - "false", то права доступа будут удалены для всех групп.
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/removefileaccesspermission.php
      */
     public function RemoveFileAccessPermission($path, $arGroups = false): bool
     {
@@ -154,6 +165,7 @@ class CAllMain
      * @param string $max_right_for_super_admin Если значение - Y и groups = false, то пользователю входящему в группу администраторов (группа #1) всегда будет возвращаться максимальное право - W, независимо от того какие права установлены в настройках модуля.
      * @param string|boolean $site_id ID сайта.
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getuserright.php
      */
     public static function GetUserRight(
         string $module_id,
@@ -175,6 +187,7 @@ class CAllMain
      * @param string $max_role_for_super_admin
      * @param string|boolean $site_id
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getuserroles.php
      */
     public static function GetUserRoles(
         string $module_id,
@@ -189,17 +202,19 @@ class CAllMain
 
     /**
      * Отображает заголовок страницы. Метод использует технологию отложенных функций, позволяющую, помимо всего прочего, задавать заголовок страницы (например, внутри компонента) уже после того как был выведен пролог сайта.
-     * @param string $property_name Идентификатор свойства страницы, значение которого будет выведено в качестве заголовка (если это значение задано например, с помощью метода CMain::SetPageProperty).
+     * @param string|boolean $property_name Идентификатор свойства страницы, значение которого будет выведено в качестве заголовка (если это значение задано например, с помощью метода CMain::SetPageProperty).
      * @param boolean $strip_tags Если значение - "true", то из заголовка страницы будут удалены все HTML теги.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showtitle.php
      */
-    public function ShowTitle(string $property_name = 'title', bool $strip_tags = true): void
+    public function ShowTitle($property_name = 'title', bool $strip_tags = true): void
     { }
 
     /**
      * Метод предназначен для вывода в шаблоне сайта основных полей тега <head>: мета-теги Content-Type, robots, keywords, description; стили CSS; скрипты, заданные через CMain::AddHeadScript.
      * @param boolean $bXhtmlStyle Параметр, устанавливающий, по какому стандарту оформляются HTML-теги. Если значение true, то теги выводятся по стандарту XHTML (<meta />), иначе по стандарту HTML 4 (<meta>).
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/ShowHead.php
      */
     public function ShowHead(bool $bXhtmlStyle = true): void
     { }
@@ -209,6 +224,7 @@ class CAllMain
      * Отображает специальные стили, JavaScript либо произвольный html-код.
      * @param boolean $additional
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showheadstrings.php
      */
     public function ShowHeadStrings(bool $additional = false): void
     { }
@@ -216,6 +232,7 @@ class CAllMain
     /**
      * Отображает панель управления в публичной части сайта.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showpanel.php
      */
     public function ShowPanel(): void
     { }
@@ -224,6 +241,7 @@ class CAllMain
      * Выводит HTML представляющий из себя панель управления публичной частью.
      *
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getpanel.php
      */
     public function GetPanel(): string
     {
@@ -236,6 +254,7 @@ class CAllMain
      * @param array $arButton Массив описывающий добавляемую кнопку.
      * @param boolean $bReplace
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addpanelbutton.php
      */
     public function AddPanelButton(array $arButton, $bReplace = false)
     { }
@@ -247,6 +266,7 @@ class CAllMain
      * view - просмотр (по умолчанию)
      * edit - редактирование
      * configure - редактирование
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/GetPublicShowMode.php
      */
     public function GetPublicShowMode(): string
     {
@@ -256,6 +276,7 @@ class CAllMain
     /**
      * Отображает HTML для подключения CSS на странице.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showcss.php
      */
     public function ShowCSS(): void
     { }
@@ -263,6 +284,7 @@ class CAllMain
     /**
      * Отображает HTML с навигационной цепочкой.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/shownavchain.php
      */
     public function ShowNavChain(): void
     { }
@@ -272,6 +294,7 @@ class CAllMain
      * @param string $property_id Идентификатор свойства.
      * @param mixed $default_value Значение свойства по умолчанию.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showproperty.php
      */
     public function ShowProperty(string $property_id, $default_value = false): void
     { }
@@ -281,6 +304,7 @@ class CAllMain
      * @param string|boolean $property_name Если указано значение "false", то будет возвращен заголовок страницы, устанавливаемый с помощью метода SetTitle. В противном случае в параметре передается идентификатор свойства страницы, значение которого будет выведено в качестве заголовка (если это значение задано, например, с помощью метода CMain::SetPageProperty).
      * @param boolean $strip_tags Если значение - "true", то из заголовка страницы будут удалены все HTML теги.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/gettitle.php
      */
     public function GetTitle($property_name = false, bool $strip_tags = false): string
     {
@@ -293,6 +317,7 @@ class CAllMain
      * @param string $title Заголовок страницы.
      * @param arrray|null $arOptions Необязательный. По умолчанию - "null".
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/settitle.php
      */
     public function SetTitle(string $title, ?arrray $arOptions = null): void
     { }
@@ -302,6 +327,7 @@ class CAllMain
      * @param boolean $external Если значение - "true", то выводится HTML представляющий из себя ссылку на внешний CSS, если значение "false", то выводится HTML представляющий из себя внутренний CSS.
      * @param boolean $bXhtmlStyle Параметр, устанавливающий, по какому стандарту оформляются HTML-теги. Если значение true, то теги выводятся по стандарту XHTML (<meta />), иначе по стандарту HTML 4 (<meta>).
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getcss.php
      */
     public function GetCSS(bool $external = true, bool $bXhtmlStyle = true): string
     {
@@ -313,6 +339,7 @@ class CAllMain
      *
      * @param string $rel_path Относительный путь к CSS стилю компонента.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/settemplatecss.php
      */
     public function SetTemplateCSS(string $rel_path): void
     { }
@@ -323,6 +350,7 @@ class CAllMain
      * @param string $Path2css Путь относительно корня к файлу с CSS стилями.
      * @param boolean $additional Необязательный. По умолчанию "false".
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/setadditionalcss.php
      */
     public function SetAdditionalCSS(string $Path2css, bool $additional = false): void
     { }
@@ -335,6 +363,7 @@ class CAllMain
      * @param boolean $IncludeOnce Необязателен. По умолчанию - "false". В режиме правки с параметром ShowIcons=true цепочка не строится.
      * @param boolean $ShowIcons Флаг отображения иконки.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getnavchain.php
      */
     public function GetNavChain($path = false, int $NumFrom = 0, $NavChainPath = false, bool $IncludeOnce = false, bool $ShowIcons = true): string
     {
@@ -348,6 +377,7 @@ class CAllMain
      * @param string $link URL на который будет указывать добавляемый пункт навигационной цепочки.
      * @param boolean $bUnQuote Если значение - "true", то в title будут произведены следующие замены
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addchainitem.php
      */
     public function AddChainItem(string $title, string $link = "", bool $bUnQuote = true): void
     { }
@@ -360,6 +390,7 @@ class CAllMain
      * @param boolean|string $template Путь относительно корня к шаблону меню.
      * @param boolean|string $sInitDir Каталог для которого будет строится меню.
      * @return CMenu
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getmenu.php
      */
     public function GetMenu(string $type = "left", bool $bMenuExt = false, $template = false, $sInitDir = false): CMenu
     {
@@ -375,6 +406,7 @@ class CAllMain
      * @param boolean|string $template Путь относительно корня к шаблону меню.
      * @param boolean|string $sInitDir Каталог для которого будет строится меню.
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getmenuhtml.php
      */
     public function GetMenuHtml(string $type = "left", $bMenuExt = false, $template = false, $sInitDir = false): string
     {
@@ -390,6 +422,7 @@ class CAllMain
      * @param boolean|string $template Путь относительно корня к шаблону меню.
      * @param boolean|string $sInitDir Каталог для которого будет строится меню.
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getmenuhtmlex.php
      */
     public function GetMenuHtmlEx(string $type = "left", $bMenuExt = false, $template = false, $sInitDir = false): string
     {
@@ -398,9 +431,11 @@ class CAllMain
 
     /**
      * Возвращает путь к текущей странице относительно корня вместе с параметрами.
+     * 
      * @param string $add_params Строка параметров добавляемая к возвращаемому значению.
      * @param string $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getcururi.php
      */
     public function GetCurUri(string $add_params = "", ?string $get_index_page = null): string
     {
@@ -409,8 +444,10 @@ class CAllMain
 
     /**
      * Возвращает путь к текущей странице относительно корня.
+     * 
      * @param boolean $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return string Путь к текущей странице относительно корня.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getcurpage.php
      */
     public function GetCurPage(?bool $get_index_page = null): string
     {
@@ -419,10 +456,12 @@ class CAllMain
 
     /**
      * Возвращает путь к текущей странице относительно корня c добавленными новыми и(или) удаленными текущими параметрами.
+     * 
      * @param string $add_params Строка с параметрами которые нужно добавить к возвращаемому значению.
      * @param array $remove_params Массив параметров, которые необходимо удалить из URL-а страницы.
      * @param boolean $get_index_page Параметр указывает, нужно ли для индексной страницы раздела возвращать путь, заканчивающийся на "index.php". Если значение параметра равно true, то возвращается путь с "index.php", иначе - путь, заканчивающийся на "/".
      * @return string Путь к текущей странице относительно корня.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getcurpageparam.php
      */
     public function GetCurPageParam(string $add_params = "", array $remove_params = array(), ?bool $get_index_page = null): string
     {
@@ -432,7 +471,9 @@ class CAllMain
 
     /**
      * Возвращает каталог текущей страницы относительно корня.
+     * 
      * @return string Каталог текущей странице относительно корня.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getcurdir.php
      */
     public function GetCurDir(): string
     {
@@ -445,15 +486,18 @@ class CAllMain
      * @param string $page Адрес страницы. Например, "/ru/index.php".
      * @param string|boolean $param Строка параметров. Например, "id=2&s=3&t=4". Параметр необязательный. Если его не задавать, то параметры страницы в объекте класса CMain остаются без изменений.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/setcurpage.php
      */
     public function SetCurPage(string $page, $param = false): void
     { }
 
     /**
      * Возвращает свойство текущей страницы или раздела. Если на самой странице свойство не задано, то будет возвращено значение свойства вышестоящего раздела (рекурсивно до корня сайта).
+     * 
      * @param string $property_id Идентификатор свойства.
      * @param mixed $default_value Значение свойства по умолчанию.
      * @return string Свойство текущей страницы или раздела.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getproperty.php
      */
     public function GetProperty(string $property_id, $default_value = false): string
     {
@@ -462,9 +506,11 @@ class CAllMain
 
     /**
      * Возвращает свойство текущей страницы.
+     * 
      * @param string $property_id Идентификатор свойства.
      * @param mixed $default_value Значение свойства по умолчанию.
      * @return string Свойство текущей страницы или раздела.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getpageproperty.php
      */
     public function GetPageProperty(string $property_id, $default_value = false): string
     {
@@ -473,10 +519,12 @@ class CAllMain
 
     /**
      * Возвращает свойство текущего раздела.
+     * 
      * @param string $property_id Идентификатор свойства.
      * @param mixed $path Путь к каталогу. В случае многосайтовой версии, если DOCUMENT_ROOT у сайтов разный (задается в поле "Путь к корневой папке веб-сервера" в настройках сайта), то в данном параметре необходимо передавать массив.
      * @param mixed $default_value Значение свойства по умолчанию.
      * @return string Свойство текущей страницы или раздела.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getdirproperty.php
      */
     public function GetDirProperty(string $property_id, $path = false, $default_value = false): string
     {
@@ -485,7 +533,9 @@ class CAllMain
 
     /**
      * Возвращает массив всех свойств страницы.
+     * 
      * @return array Mассив всех свойств страницы.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getpagepropertylist.php
      */
     public function GetPagePropertyList(): array
     {
@@ -494,8 +544,10 @@ class CAllMain
 
     /**
      * Возвращает массив свойств раздела, собранных рекурсивно до корня сайта.
+     * 
      * @param mixed $path Путь к каталогу. В случае многосайтовой версии, если DOCUMENT_ROOT у сайтов разный (задается в поле "Путь к корневой папке веб-сервера" в настройках сайта), то в данном параметре необходимо передавать массив.
      * @return array Свойство текущей страницы или раздела.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getdirpropertylist.php
      */
     public function GetDirPropertyList($path = false): array
     {
@@ -504,41 +556,49 @@ class CAllMain
 
     /**
      * Устанавливает свойство для текущей страницы.
+     * 
      * @param string $property_id Идентификатор свойства.
      * @param string $property_value Значение свойства.
      * @param array $Options Необязательный. По умолчанию "null".
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/setpageproperty.php
      */
     public function SetPageProperty(string $property_id, string $property_value, ?array $Options = null): void
     { }
 
     /**
      * Устанавливает свойство для текущего раздела.
+     * 
      * @param string $property_id Идентификатор свойства.
      * @param string $property_value Значение свойства.
      * @param array $path Путь до страницы. По умолчанию - "false", то есть текущий.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/setdirproperty.php
      */
     public function SetDirProperty(string $property_id, string $property_value, ?bool $path = false): void
     { }
 
     /**
      * Метод подключает компонент 2.0.
+     * 
      * @param string $componentName Имя компонента. Например: "bitrix:news.detail".
      * @param string $componentTemplate Имя шаблона компонента. Если имя пустое, то подразумевается имя ".default".
      * @param array $arParams Массив входных параметров компонента.
-     * @param object $parentComponent Объект родительского комплексного компонента, если компонент подключается из шаблона комплексного компонента. В шаблоне комплексного компонента определена переменная $component, которая содержит объект этого комплексного компонента.
+     * @param object|boolean $parentComponent Объект родительского комплексного компонента, если компонент подключается из шаблона комплексного компонента. В шаблоне комплексного компонента определена переменная $component, которая содержит объект этого комплексного компонента.
      * @param array $arFunctionParams Массив, содержащий дополнительные параметры отображения компонента:
      * "HIDE_ICONS"=>"Y" - не показывать панель настройки компонента в режиме редактировани/разработки;
      * "ACTIVE_COMPONENT"=>"N" - отключить компонент (код компонента не подключается).
      * @return mixed Возвращает код компонента.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/includecomponent.php
      */
-    public function IncludeComponent(string $componentName, string $componentTemplate, array $arParams = [], object $parentComponent = null, array $arFunctionParams = [])
+    public function IncludeComponent(string $componentName, string $componentTemplate, array $arParams = [], $parentComponent = null, array $arFunctionParams = [])
     { }
 
     /**
      * Метод является основой для подключения каких либо файлов в теле страницы, в прологе или в эпилоге и единственным для подключения компонентов. Визуальное содержимое подключенного файла представляет из себя включаемую область.
+     * 
      * @param string $path Путь к подключаемому файлу.
      * @param array $params Массив параметров для подключаемого файла.
      * @param array $function_params Массив настроек данного метода.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/includefile.php
      */
     public function IncludeFile(string $path, array $params = [], array $function_params = [])
     { }
@@ -548,6 +608,7 @@ class CAllMain
      *
      * @param string $rel_path Путь к компоненту.
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/gettemplatepath.php
      */
     public function GetTemplatePath(string $rel_path): string
     {
@@ -568,8 +629,8 @@ class CAllMain
      * @param boolean|int $spread Если значение "true", то параметры установленного cookie будут запоминаться для дальнейшего его распространения по доменам (административное меню "Сайты", в настройках сайта - поле "Доменное имя").
      * @param boolean $name_prefix Префикс имени переменной cookie. По умолчанию - значение параметра "Имя префикса для названия cookies" в настройках главного модуля.
      * @param boolean $httpOnly Необязательный. По умолчанию - "false".
-     * 
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/set_cookie.php
      */
     public function set_cookie(
         string $name,
@@ -592,6 +653,7 @@ class CAllMain
      * @param string $name Имя cookie переменной.
      * @param boolean $name_prefix Префикс имени переменной cookie. По умолчанию - значение параметра "Имя префикса для названия cookies" в настройках главного модуля
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/get_cookie.php
      */
     public function get_cookie(string $name, $name_prefix = false): string
     {
@@ -602,10 +664,18 @@ class CAllMain
      * Отображает HTML представляющий из себя набор IFRAME'ов предназначенный для распространения cookie по доменам. Метод используется в Технологии переноса посетителей между разными сайтами. Она стандартно включена в визуальную часть эпилога.
      *
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showspreadcookiehtml.php
      */
     public function ShowSpreadCookieHTML(): void
     { }
 
+    /**
+     * Метод возвращает объект класса CApplicationException, содержащий последнее исключение.
+     * Аналог в новом ядре D7: SystemException.
+     *
+     * @return CApplicationException
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getexception.php
+     */
     public function GetException(): CApplicationException
     {
         return new CApplicationException('');
@@ -618,6 +688,7 @@ class CAllMain
      * @param mixed $msg
      * @param mixed $id
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/throwexception.php
      */
     public function ThrowException($msg, $id = false): void
     { }
@@ -627,6 +698,7 @@ class CAllMain
      * Аналог в новом ядре D7: SystemException.
      *
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/resetexception.php
      */
     public function ResetException(): void
     { }
@@ -637,6 +709,7 @@ class CAllMain
      * @param string $strTitle Заголовок страницы.
      * @param string $filepath Абсолютный путь к подключаемому файлу.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/includeadminfile.php
      */
     public function IncludeAdminFile(string $strTitle, string $filepath): void
     { }
@@ -647,6 +720,7 @@ class CAllMain
      * @param string $string Произвольный текст (HTML код).
      * @param array|boolean $arIcons Массив иконок, каждый элемент которого представляет из себя массив описывающий одну иконку
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/includestring.php
      */
     public function IncludeString(string $string, $arIcons = false): string
     {
@@ -657,6 +731,7 @@ class CAllMain
      * Возвращает "true", если кнопка "Показать включаемые области" на панели управления нажата, в противном случае - "false".
      *
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getshowincludeareas.php
      */
     public function GetShowIncludeAreas(): bool
     {
@@ -669,6 +744,7 @@ class CAllMain
      * @param string:array $callback
      * @param mixed parameter_n Неограниченное количество параметров которые будут впоследствии переданы функции function.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addbuffercontent.php
      */
     public function AddBufferContent(callable $callback): void
     { }
@@ -680,6 +756,7 @@ class CAllMain
      * @param string $html_before HTML код выводимый перед баннером.
      * @param string $html_after HTML код выводимый после баннера.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showbanner.php
      */
     public static function ShowBanner(string $type, string $html_before = '', string $html_after = ''): void
     { }
@@ -690,6 +767,7 @@ class CAllMain
      * @param string|boolean $cur_dir Путь относительно корня. По умолчанию - путь к текущей странице.
      * @param string|boolean $cur_host Имя домена. По умолчанию - текущий домен.
      * @return array
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/getsitebydir.php
      */
     public function GetSiteByDir($cur_dir = false, $cur_host = false): array
     {
@@ -705,6 +783,7 @@ class CAllMain
      * @param string $not_show_links Данный параметр передается в компонент "Форма авторизации" (main/auth/authorize.php). Если значение "Y" - то ссылки ведущие на регистрацию и форму запроса и смены забытого пароля выводиться не будут, если "N" - ссылки выводиться будут (значение по умолчанию).
      * @param boolean $do_die Если значение "true" - то страница будет завершена после вывода формы и (опционально) эпилога, "false" - страница прерываться не будет.
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/authform.php
      */
     public function AuthForm($mess, bool $show_prolog = true, bool $show_epilog = true, $not_show_links = "N", bool $do_die = true)
     { }
@@ -713,6 +792,7 @@ class CAllMain
      * Определяет является ли текущий протокол защищенным (HTTPS).
      *
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/ishttps.php
      */
     public static function IsHTTPS(): bool
     {
@@ -726,6 +806,7 @@ class CAllMain
      * @param mixed $content
      * @param mixed $pos
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addviewcontent.php
      */
     public function AddViewContent(string $view, $content, $pos = 500)
     { }
@@ -735,6 +816,7 @@ class CAllMain
      *
      * @param string $view идентификатор буферизируемой области
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showviewcontent.php
      */
     public function ShowViewContent(string $view)
     { }
@@ -747,6 +829,7 @@ class CAllMain
      * @param string $charset_in Исходная кодировка
      * @param string $charset_out Конечная кодировка
      * @return string Возвращает строку в нужной кодировке.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/convertcharset.php
      */
     public function ConvertCharset(string $string, string $charset_in, string $charset_out): string
     {
@@ -761,6 +844,7 @@ class CAllMain
      * @param string $charset_in Исходная кодировка
      * @param string $charset_out Конечная кодировка
      * @return array Возвращает данные в нужной кодировке.
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/convertcharsetarray.php
      */
     public function ConvertCharsetArray(array $Data, string $charset_in, string $charset_out): array
     {
@@ -786,6 +870,7 @@ class CAllSite
      *
      * @param string $Dir Директория сайта
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/indir.php
      */
     public static function InDir(string $Dir): bool
     {
@@ -797,6 +882,7 @@ class CAllSite
      *
      * @param array $arGroups Массив, в котором указываются ИД групп.
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/ingroup.php
      */
     public static function InGroup(array $arGroups): bool
     {
@@ -812,6 +898,7 @@ class CAllSite
      * @param boolean $lang ID сайта. По умолчанию используется ID текущего сайта.
      * @param boolean $bSearchInSitesOnly Если переменная определена в true, то в административной части будет использован не формат языка административной части, а сайта по умолчанию.
      * @return string
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/getdateformat.php
      */
     public static function GetDateFormat(
         string $type = "FULL",
@@ -827,6 +914,7 @@ class CAllSite
      *
      * @param array $arFields Массив значений полей вида array("поле"=>"значение" [, ...]). 
      * @return mixed
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/add.php
      */
     public function Add(array $arFields)
     { }
@@ -837,6 +925,7 @@ class CAllSite
      * @param integer $ID ID сайта.
      * @param array $arFields Массив значений полей вида array("поле"=>"значение" [, ...]).
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/update.php
      */
     public function Update(int $ID, array $arFields): bool
     {
@@ -848,6 +937,7 @@ class CAllSite
      *
      * @param string $ID ID удаляемого сайта.
      * @return mixed
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/delete.php
      */
     public static function Delete(string $ID)
     { }
@@ -857,6 +947,7 @@ class CAllSite
      *
      * @param mixed $site_id Идентификатор сайта, список шаблонов которого нужно получить.
      * @return mixed
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/gettemplatelist.php
      */
     public static function GetTemplateList($site_id)
     { }
@@ -868,6 +959,7 @@ class CAllSite
      * @param string $order Порядок сортировки.
      * @param array $arFilter Массив вида array("фильтруемое поле"=>"значение" [, ...]).
      * @return _CLangDBResult
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/getlist.php
      */
     public static function GetList(&$by, &$order, $arFilter = array()): _CLangDBResult
     {
@@ -879,6 +971,7 @@ class CAllSite
      *
      * @param string $ID ID сайта.
      * @return _CLangDBResult
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/csite/getbyid.php
      */
     public static function GetByID(string $ID): _CLangDBResult
     {
