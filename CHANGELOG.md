@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.2.8] - 2019-05-15
+
+- Update CMain
+- Add CIBlockElement stubs
+
 ## [0.2.7] - 2019-04-29
 
 - Add cache snippet and stubs
