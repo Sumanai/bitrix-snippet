@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.9] - 2019-05-17
+
+- Add Add CIBlockSection stubs
+
 ## [0.2.8] - 2019-05-15
 
 - Update CMain

@@ -2,7 +2,7 @@
 	"name": "bitrix-snippet",
 	"displayName": "Bitrix Snippet",
 	"description": "",
-	"version": "0.2.8",
+	"version": "0.2.9",
 	"publisher": "Sumanai",
 	"icon": "images/bitrix_logo.png",
 	"bugs": {
