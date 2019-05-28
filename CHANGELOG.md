@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.3.0] - 2019-05-28
+
+- Add CIBlockProperty stubs
+
 ## [0.2.9] - 2019-05-17
 
 - Add Add CIBlockSection stubs
