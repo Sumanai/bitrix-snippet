@@ -401,7 +401,7 @@ class CFile
      *
      * @param array $File массив файла
      * @param array $Size Массив вида array("width" => $width, "height" => $height)); оба ключа обязательны
-     * @param [type] $resizeType тип масштабирования
+     * @param BX_RESIZE_IMAGE_PROPORTIONAL_ALT|BX_RESIZE_IMAGE_PROPORTIONAL|BX_RESIZE_IMAGE_EXACT $resizeType тип масштабирования
      * @return boolean
      */
     public static function ResizeImage(
