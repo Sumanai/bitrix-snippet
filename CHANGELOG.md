@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.1] - 2019-06-25
+
+- Improve CIBlockSection snippet
+- Fix ResizeImage parameter type
+- Add Loc stubs
+- Fix d7cache snippet
+
 ## [0.3.0] - 2019-05-28
 
 - Add CIBlockProperty stubs
