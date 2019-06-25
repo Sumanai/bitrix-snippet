@@ -7,7 +7,7 @@
             "\t\\$vars = \\$cache->getVars();",
             "}",
             "elseif (\\$cache->startDataCache()) {",
-            "\t${2:${TM_SELECTED_TEXT://yourcode}}",
+            "\t${4:${TM_SELECTED_TEXT://yourcode}}",
             "\t\\$cache->endDataCache(\\$vars);",
             "}"
         ]
