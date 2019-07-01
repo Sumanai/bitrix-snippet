@@ -789,6 +789,28 @@ class CAllMain
     { }
 
     /**
+     * Метод для работы с captcha.
+     *
+     * @param string $captcha_word Слово с капчи
+     * @param string $captcha_sid сессия капчи
+     * @return boolean
+     */
+    public function CaptchaCheckCode(string $captcha_word, string $captcha_sid): bool
+    {
+        return false;
+    }
+
+    /**
+     * Метод создает объект типа CCaptcha, и возвращает сгенерированный код.
+     *
+     * @return string
+     */
+    public function CaptchaGetCode(): string
+    {
+        return '';
+    }
+
+    /**
      * Определяет является ли текущий протокол защищенным (HTTPS).
      *
      * @return boolean
