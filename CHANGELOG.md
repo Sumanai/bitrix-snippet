@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.2] - 2019-07-01
+
+- Add captcha method in CMain stubs
+- Add callcable type in EventManager
+- Add CEvent, CEventMessage and CEventType stubs
+
 ## [0.3.1] - 2019-06-25
 
 - Improve CIBlockSection snippet
