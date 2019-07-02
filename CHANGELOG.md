@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.3.3] - 2019-07-02
+
+- Fix working stubs with new PHP Intelephense version
+- Fix typo
+
 ## [0.3.2] - 2019-07-01
 
 - Add captcha method in CMain stubs
