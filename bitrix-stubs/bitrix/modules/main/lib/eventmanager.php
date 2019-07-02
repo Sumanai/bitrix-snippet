@@ -30,12 +30,12 @@ class EventManager
     /**
      * @param string $fromModuleId Идентификатор модуля который будет инициировать событие.
      * @param string $eventType Идентификатор события.
-     * @param callcable $callback Название функции обработчика. Если это метод класса, то массив вида Array(класс(объект), название метода).
+     * @param callable $callback Название функции обработчика. Если это метод класса, то массив вида Array(класс(объект), название метода).
      * @param mixed $includeFile Полный путь к файлу для подключения при возникновении события перед вызовом callback.
      * @param int $sort Очередность (порядок), в котором выполняется данный обработчик (обработчиков данного события может быть больше одного).
      * @return int
      */
-    public function addEventHandler(string $fromModuleId, string $eventType, callcable $callback, $includeFile = false, int $sort = 100): int
+    public function addEventHandler(string $fromModuleId, string $eventType, callable $callback, $includeFile = false, int $sort = 100): int
     {
         return 0;
     }
@@ -43,12 +43,12 @@ class EventManager
     /**
      * @param string $fromModuleId Идентификатор модуля который будет инициировать событие.
      * @param string $eventType Идентификатор события.
-     * @param callcable $callback Название функции обработчика. Если это метод класса, то массив вида Array(класс(объект), название метода).
+     * @param callable $callback Название функции обработчика. Если это метод класса, то массив вида Array(класс(объект), название метода).
      * @param mixed $includeFile Полный путь к файлу для подключения при возникновении события перед вызовом callback.
      * @param int $sort Очередность (порядок), в котором выполняется данный обработчик (обработчиков данного события может быть больше одного).
      * @return int
      */
-    public function addEventHandlerCompatible(string $fromModuleId, string $eventType, callcable $callback, $includeFile = false, int $sort = 100): int
+    public function addEventHandlerCompatible(string $fromModuleId, string $eventType, callable $callback, $includeFile = false, int $sort = 100): int
     {
         return 0;
     }
