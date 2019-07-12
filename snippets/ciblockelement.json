@@ -59,9 +59,8 @@
             "\t\"ACTIVE\"    => \"Y\",",
             "\t//...",
             ");",
-            "\\$rsIDElement = \\$rsElement->Update(\"${1:id}\",\\$arFields);"
+            "\\$rsIDElement = \\$rsElement->Update(${1:\"id\"}, \\$arFields);"
         ],
         "description": "Изменяет элемент."
     }
-
 }
