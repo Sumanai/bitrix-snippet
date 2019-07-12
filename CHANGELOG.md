@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.3.4] - 2019-07-1  2
+
+- Update CIBlocElementUpdate snippet
+- Add Application and other stubs
+
 ## [0.3.3] - 2019-07-02
 
 - Fix working stubs with new PHP Intelephense version
