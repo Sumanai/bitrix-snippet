@@ -5,7 +5,7 @@ namespace Bitrix\Main;
 /**
  * Context - методы работы с информацией о текущем запросе: тип, параметры и их значения.
  * При инициализации приложения создаётся контекст - объект HttpContext, который как контейнер хранит в себе информацию о запросе: параметры запроса, серверное окружение, битриксовое окружение (язык, id сайта), ответ на запрос. То есть это изменяемая часть, зависящая от текущего хита.
- * 
+ *
  * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/context/index.php
  */
 class Context
@@ -72,7 +72,7 @@ class Context
      */
     public function getRequest(): HttpRequest
     {
-        return new HttpRequest();
+        return new HttpRequest(new Server([]), [], [], [], []);
     }
 
     /**
@@ -83,7 +83,7 @@ class Context
      */
     public function getServer(): Server
     {
-        return new Server();
+        return new Server([]);
     }
 
     /**
