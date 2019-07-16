@@ -1,6 +1,10 @@
 # Change Log
 
-## [0.3.4] - 2019-07-1  2
+## [0.3.5] - 2019-07-16
+
+- Add HttpRequest, Server stubs
+
+## [0.3.4] - 2019-07-12
 
 - Update CIBlocElementUpdate snippet
 - Add Application and other stubs
@@ -13,7 +17,7 @@
 ## [0.3.2] - 2019-07-01
 
 - Add captcha method in CMain stubs
-- Add callcable type in EventManager
+- Add callable type in EventManager
 - Add CEvent, CEventMessage and CEventType stubs
 
 ## [0.3.1] - 2019-06-25
