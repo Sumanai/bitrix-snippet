@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.3.6] - 2019-07-30
+
+- Add HttpResponse stubs
+- Add Cookie and HttpHeaders stubs
+- Add Date and DateTime stubs
+- Add Culture stubs
+- Add Environment stub
+
 ## [0.3.5] - 2019-07-16
 
 - Add HttpRequest, Server stubs
