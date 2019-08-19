@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.7] - 2019-08-19
+
+- Added some classes
+- Add Debug and Helper stubs
+- Add constants
+
 ## [0.3.6] - 2019-07-30
 
 - Add HttpResponse stubs
