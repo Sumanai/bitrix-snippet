@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.8] - 2019-08-22
+
+- Add Error stubs
+- Add Result and ErrorCollection stubs
+- Add Entity stubs
+- Add HighloadBlock stubs
+
 ## [0.3.7] - 2019-08-19
 
 - Added some classes
