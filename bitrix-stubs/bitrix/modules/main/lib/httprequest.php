@@ -44,7 +44,7 @@ class HttpRequest extends Request
      * @return null|string
      * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/httprequest/getquery.php
      */
-    public function getQuery($name): ?string
+    public function getQuery(string $name): ?string
     {
         return '';
     }
@@ -63,11 +63,11 @@ class HttpRequest extends Request
     /**
      * Нестатический метод возвращает POST параметры текущего запроса.
      *
-     * @param $name
+     * @param string $name
      * @return null|string
      * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/httprequest/getpost.php
      */
-    public function getPost($name): ?string
+    public function getPost(string $name): ?string
     {
         return '';
     }
@@ -86,11 +86,11 @@ class HttpRequest extends Request
     /**
      * Нестатический метод возвращает параметры FILES текущего запроса.
      *
-     * @param $name
+     * @param string $name
      * @return null|string
      * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/httprequest/getfile.php
      */
-    public function getFile($name): ?string
+    public function getFile(string $name): ?string
     {
         return '';
     }
@@ -112,7 +112,7 @@ class HttpRequest extends Request
      * @param string $name Name of header.
      * @return null|string
      */
-    public function getHeader($name): ?string
+    public function getHeader(string $name): ?string
     {
         return '';
     }
@@ -131,11 +131,11 @@ class HttpRequest extends Request
      * Нестатический метод возвращает параметры COOKIES из текущего запроса.
      * Аналог метода CMain::get_cookie в старом ядре.
      *
-     * @param $name Имя cookie переменной.
+     * @param string $name Имя cookie переменной.
      * @return null|string
      * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/httprequest/getcookie.php
      */
-    public function getCookie($name): ?string
+    public function getCookie(string $name): ?string
     {
         return '';
     }
@@ -154,10 +154,10 @@ class HttpRequest extends Request
     /**
      * Undocumented function
      *
-     * @param mixed $name
+     * @param string $name
      * @return string|null
      */
-    public function getCookieRaw($name): ?string
+    public function getCookieRaw(string $name): ?string
     {
         return '';
     }
@@ -291,7 +291,7 @@ class HttpRequest extends Request
      * @param string $queryString
      * @return void
      */
-    public function modifyByQueryString($queryString): void
+    public function modifyByQueryString(string $queryString): void
     { }
 
     /**
