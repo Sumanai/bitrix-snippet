@@ -3,7 +3,7 @@
         "scope": "php",
         "prefix": "user",
         "body": [
-            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${TM_SELECTED_TEXT:${1:\\$arResult}});echo \"</pre>\";}"
+            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(${TM_SELECTED_TEXT:${CLIPBOARD:${1:\\$arResult}}});echo \"</pre>\";}"
         ],
         "description": "Принт переменной только для админа."
     },
@@ -78,5 +78,52 @@
             ""
         ],
         "description": "Типы используемых переменных в шаблоне компонента."
+    },
+    "Bitrix.MainGlobalVars": {
+        "prefix": "bxMainGlobalVars",
+        "body": [
+            "/** @global CMain \\$APPLICATION */",
+            "/** @global CUser \\$USER */",
+            "/** @global CDatabase \\$DB */",
+            ""
+        ],
+        "description": "Типы используемых переменных во всём битриксе."
+    },
+    "Bitrix.ComponentEpilogGlobalVars": {
+        "prefix": "bxComponentEpilogGlobalVars",
+        "body": [
+            "/** @var array \\$arParams */",
+            "/** @var array \\$arResult */",
+            "/** @global CMain \\$APPLICATION */",
+            "/** @global CUser \\$USER */",
+            "/** @global CDatabase \\$DB */",
+            "/** @var CBitrixComponent \\$this */",
+            "/** @var string \\$epilogFile */",
+            "/** @var string \\$templateName */",
+            "/** @var string \\$templateFile */",
+            "/** @var string \\$templateFolder */",
+            "/** @var string \\$templateData */",
+            "/** @var string \\$componentPath */",
+            "/** @var CBitrixComponent \\$component */",
+            ""
+        ],
+        "description": "Типы используемых переменных в component_epilog шаблоне компонента."
+    },
+    "Bitrix.bxComponentParameters": {
+        "prefix": "bxComponentParameters",
+        "body": [
+            "\\$arTemplateParameters[\"${1:PARAMETER_NAME}\"] = array(",
+            "\t\"PARENT\" => \"${2|BASE,DATA_SOURCE,VISUAL,USER_CONSENT,URL_TEMPLATES,SEF_MODE,AJAX_SETTINGS,CACHE_SETTINGS,ADDITIONAL_SETTINGS|}\",",
+            "\t\"NAME\" => ${3:GetMessage(\"${1:PARAMETER_NAME}\")},",
+            "\t\"TYPE\" => \"${4|STRING,CHECKBOX,LIST,FILE,COLORPICKER,CUSTOM|}\",",
+            "\t\"DEFAULT\" => \"${5:DEFAULT_VALUE}\",",
+            "\t\"REFRESH\" => \"${6|N,Y|}\",",
+            "\t\"MULTIPLE\" => \"${7|N,Y|}\",",
+            "\t\"ADDITIONAL_VALUES\" => \"${8|N,Y|}\",",
+            "\t\"COLS\" => \"${9:25}\",",
+            ");",
+            "$0"
+        ],
+        "description": "Массив $arComponentParameters с настройками компонента."
     }
 }
