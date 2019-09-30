@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.4.0] - 2019-09-30
+
+- Bitrix way for CFile class stub
+- Refinement of variable types
+- Upgrade user snippet
+- Update CMain stubs
+- Upgrade APPLIMainInc snippet
+- Fix CIBlockSection snippets
+- Small fix D7 snippets
+
 ## [0.3.8] - 2019-08-22
 
 - Add Error stubs
