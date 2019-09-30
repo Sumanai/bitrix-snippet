@@ -2,7 +2,7 @@
     "D7Loader": {
         "prefix": "d7loader",
         "body": [
-            "\\\\Bitrix\\\\Main\\\\Loader::includeModule(\"${1:module}\");"
+            "\\\\Bitrix\\\\Main\\\\Loader::includeModule(\"${1|abtest,bitrixcloud,blog,catalog,clouds,conversion,currency,fileman,form,forum,highloadblock,iblock,landing,main,messageservice,mobileapp,perfmon,photogallery,pull,report,rest,sale,search,security,sender,seo,socialservices,subscribe,translate,ui,vote|}\");"
         ],
         "description": "Метод подключает модуль по его имени."
     }

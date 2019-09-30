@@ -2,7 +2,7 @@
     "D7Debug.write": {
         "prefix": "d7debugWrite",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::writeToFile(array('${1:\\$varname}' => ${1:\\$varname}), \"\", \"${2:filename}.txt\");",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::writeToFile(array('${1:\\$varname}' => ${1:\\$varname}), \"\", \"${2:filename}.txt\");",
             "$0"
         ],
         "description": "Печать переменных в файл. Использует print_r."
@@ -10,7 +10,7 @@
     "D7Debug.dump": {
         "prefix": "d7debugDump",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::dumpToFile(array('${1:\\$varname}' => ${1:\\$varname}), \"\", \"${2:filename}.txt\");",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::dumpToFile(array('${1:\\$varname}' => ${1:\\$varname}), \"\", \"${2:filename}.txt\");",
             "$0"
         ],
         "description": "Печать переменных в файл. Использует var_dump."
@@ -18,7 +18,7 @@
     "D7Debug.startTime": {
         "prefix": "d7debugStartTime",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::startTimeLabel(\"${1:label}\");",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::startTimeLabel(\"${1:label}\");",
             "$0"
         ],
         "description": "Устанавливает метку начала отслеживания времени выполнения фрагмента кода."
@@ -26,7 +26,7 @@
     "D7Debug.endTime": {
         "prefix": "d7debugEndTime",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::endTimeLabel(\"${1:label}\");",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::endTimeLabel(\"${1:label}\");",
             "$0"
         ],
         "description": "Устанавливает метку окончания отслеживания времени выполнения фрагмента кода."
@@ -34,7 +34,7 @@
     "D7Debug.getTime": {
         "prefix": "d7debugGetTime",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::getTimeLabels();",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::getTimeLabels();",
             "$0"
         ],
         "description": "Вывод массива пользовательских меток выполнения фрагментов кода."
@@ -42,10 +42,10 @@
     "D7Debug.time": {
         "prefix": "d7debugTime",
         "body": [
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::startTimeLabel(\"${1:label}\");",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::startTimeLabel(\"${1:label}\");",
             "${TM_SELECTED_TEXT://yourcode}",
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::endTimeLabel(\"${1:label}\");",
-            "Bitrix\\\\Main\\\\Diag\\\\Debug::getTimeLabels();",
+            "\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::endTimeLabel(\"${1:label}\");",
+            "if (\\$GLOBALS[\"USER\"]->IsAdmin()) {echo \"<pre>\";var_dump(\\\\Bitrix\\\\Main\\\\Diag\\\\Debug::getTimeLabels());echo \"</pre>\";}",
             "$0"
         ],
         "description": "Замер времени выполнения выделенного фрагмента кода."
