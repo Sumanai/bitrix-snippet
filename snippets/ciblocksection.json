@@ -17,16 +17,16 @@
     "CIBlockSection.Delete": {
         "prefix": "CIBlockSectionDel",
         "body": [
-            "CIBlockSection::Delete(\"${1:SectionID}\");"
+            "CIBlockSection::Delete(${1:\"SectionID\"});"
         ],
         "description": "Удаляет раздел из информационного блока."
     },
     "CIBlockSection.GetByID": {
         "prefix": "CIBlockSectionID",
         "body": [
-            "\\$arSection = CIBlockSection::GetByID(\"${1:SectionID}\")->fetch();",
+            "\\$arSection = CIBlockSection::GetByID(${1:\"SectionID\"})->fetch();",
             "if(is_array(\\$arSection)) {",
-            "\t//body ...",
+            "\t${2://body ...}",
             "}"
         ],
         "description": "Возвращает параметры раздела по его коду ID."
@@ -56,11 +56,10 @@
             "\\$rsSection = new CIBlockSection;",
             "\\$arFields = array(",
             "\t\"ACTIVE\" => \"Y\",",
-            "\t//...",
+            "\t${2://...}",
             ");",
-            "\\$rsIDSection = \\$rsSection->Update(\"${1:id}\",\\$arFields);"
+            "\\$rsIDSection = \\$rsSection->Update(${1:\"id\"}, \\$arFields);"
         ],
         "description": "Изменяет параметры существующего раздела."
     }
-
 }
