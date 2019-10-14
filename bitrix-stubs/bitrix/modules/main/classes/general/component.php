@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Класс CBitrixComponent является оболочкой компонента. Для каждого подключаемого компонента создаётся свой экземпляр класса CBitrixComponent, который живет до конца подключения компонента. Внутри компонента методы этого класса доступны через переменную-псевдоним $this.
+ * 
+ * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/index.php
+ */
 class CBitrixComponent
 {
     /** @var CBitrixComponentTemplate */
@@ -43,7 +48,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/getname.php
      */
     final public function getName(): ?string
     {
@@ -55,7 +60,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/getrelativepath.php
      */
     final public function getRelativePath(): ?string
     {
@@ -67,7 +72,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/getpath.php
      */
     final public function getPath(): ?string
     {
@@ -79,7 +84,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/gettemplatename.php
      */
     final public function getTemplateName(): ?string
     {
@@ -153,7 +158,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/gettemplatepage.php
      */
     final public function getTemplatePage(): ?string
     {
@@ -165,7 +170,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return CBitrixComponentTemplate
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/gettemplate.php
      */
     final public function getTemplate(): ?CBitrixComponentTemplate
     {
@@ -177,7 +182,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return CBitrixComponent
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/getparent.php
      */
     final public function getParent(): ?CBitrixComponentTemplate
     {
@@ -189,7 +194,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return array[string][int]string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/gettemplatecacheddata.php
      */
     final public function getTemplateCachedData()
     { }
@@ -200,7 +205,7 @@ class CBitrixComponent
      * <p>Note: component must be inited by initComponent method.</p>
      * @param array[string][int]string $templateCachedData
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/settemplatecacheddata.php
      */
     final public function setTemplateCachedData($templateCachedData): void
     { }
@@ -274,7 +279,7 @@ class CBitrixComponent
      * @param string $templatePage Имя страницы шаблона компонента. Устанавливается для комплексных компонентов. Для обычных компонентов должно быть равно пустой строке или не установлено.
      * @param string $customTemplatePath
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/includecomponenttemplate.php
      */
     final public function includeComponentTemplate(string $templatePage = "", string $customTemplatePath = ""): void
     { }
@@ -289,7 +294,7 @@ class CBitrixComponent
      * @param string|bool $siteTemplate
      * @param string $customTemplatePath
      * @return bool Возвращает True в случае успешной инициализации, иначе - False.
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/initcomponenttemplate.php
      */
     final public function initComponentTemplate(string $templatePage = "", $siteTemplate = false, string $customTemplatePath = ""): bool
     {
@@ -302,7 +307,7 @@ class CBitrixComponent
      *
      * <p>Note: component must be inited by initComponent method.</p>
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/showcomponenttemplate.php
      */
     final public function showComponentTemplate(): void
     { }
@@ -317,7 +322,7 @@ class CBitrixComponent
      *     'TITLE' => "Это новая кнопка"
      * )
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/addincludeareaicon.php
      */
     final public function addIncludeAreaIcon($arIcon): void
     { }
@@ -327,7 +332,7 @@ class CBitrixComponent
      *
      * @param array[int][string]mixed $arIcon
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/addincludeareaicons.php
      */
     final public function addIncludeAreaIcons($arIcons): void
     { }
@@ -360,7 +365,7 @@ class CBitrixComponent
      * @param mixed $additionalCacheID
      * @param string|bool $cachePath
      * @return string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/startresultcache.php
      */
     final public function startResultCache($cacheTime = false, $additionalCacheID = false, $cachePath = false): string
     {
@@ -383,7 +388,7 @@ class CBitrixComponent
      *
      * <p>Note: must be called if component returns before endResultCache or includeComponentTemplate called.</p>
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/abortresultcache.php
      */
     final public function abortResultCache(): void
     { }
@@ -396,7 +401,7 @@ class CBitrixComponent
      * @param mixed $additionalCacheID
      * @param string|bool $cachePath
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/clearresultcache.php
      */
     final public function clearResultCache($additionalCacheID = false, $cachePath = false): void
     { }
@@ -430,7 +435,7 @@ class CBitrixComponent
      * <p>Note: it's call adds key, not replacing.</p>
      * @param array[int]string $arResultCacheKeys
      * @return void
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponent/setresultcachekeys.php
      */
     final public function setResultCacheKeys($arResultCacheKeys): void
     { }
