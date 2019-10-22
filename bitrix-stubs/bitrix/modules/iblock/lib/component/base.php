@@ -942,7 +942,14 @@ abstract class Base extends \CBitrixComponent
     protected function modifyOffers(array $offers): void
     { }
 
-    abstract protected function chooseOffer(array $offers, int $iblockId);
+    /**
+     * Undocumented function
+     *
+     * @param array $offers
+     * @param integer $iblockId
+     * @return void
+     */
+    abstract protected function chooseOffer(array $offers, int $iblockId): void;
 
     /**
      * Undocumented function
