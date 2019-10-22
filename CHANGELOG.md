@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.4.1] - 2019-10-22
+
+- Add links to CBitrixComponent
+- Add Config stubs
+- Add Base stubs
+- Add ElementList stubs
+
 ## [0.4.0] - 2019-09-30
 
 - Bitrix way for CFile class stub
