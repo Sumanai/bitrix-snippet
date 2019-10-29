@@ -959,6 +959,11 @@ abstract class Base extends \CBitrixComponent
     protected function initResultCache(): void
     { }
 
+    /**
+     * Undocumented function
+     *
+     * @return array
+     */
     protected function getCacheKeys(): array
     {
         return [];
