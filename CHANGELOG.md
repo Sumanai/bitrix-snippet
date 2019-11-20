@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.4.2] - 2019-11-20
+
+- Add some iblock component stubs
+- Update D7 cache snippet
+
 ## [0.4.1] - 2019-10-22
 
 - Add links to CBitrixComponent
