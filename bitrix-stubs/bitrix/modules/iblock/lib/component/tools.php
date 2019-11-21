@@ -12,6 +12,7 @@ class Tools
 {
     const IPROPERTY_ENTITY_ELEMENT = 'ELEMENT';
     const IPROPERTY_ENTITY_SECTION = 'SECTION';
+
     /**
      * Performs actions enabled by its parameters.
      *
