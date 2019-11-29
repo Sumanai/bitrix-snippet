@@ -1,5 +1,19 @@
 <?php
 
+/**
+ *  Класс **CBitrixComponentTemplate** является оболочкой шаблона компонента. Для каждого подключаемого шаблона компонента создаётся свой экземпляр класса **CBitrixComponentTemplate**, который живет от момента инициализации шаблона в коде компонента до конца подключения компонента.  
+ * Для получения доступа к методам этого класса внутри компонента (после инициализации шаблона) нужно получить объект шаблона с помощью метода компонента **CBitrixComponent::GetTemplate**:
+ * ```php
+ * $template = & $this->GetTemplate();
+ * $templateFile = $template->GetFile();
+ * ```
+ * С версии 15.5.1 стало возможным использования внешних файлов css без дополнительных манипуляций с кодом. Для этого достаточно в файле **template.php** нужного компонента прописать:
+ * ```php
+ * $this->addExternalCss("/local/styles.css");
+ * $this->addExternalJS("/local/liba.js");
+ * ```
+ * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/
+ */
 class CBitrixComponentTemplate
 {
     /** @var CBitrixComponent */
@@ -7,11 +21,16 @@ class CBitrixComponentTemplate
 
     /**
      * Метод возвращает имя шаблона компонента.
+     * ```php
+     * // В коде компонента
+     * $template = & $this->GetTemplate();
+     * $templateName = $template->GetName();
+     * ```
      *
      * Requires Init call before usage.
      *
      * @return null|string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/getname.php
      * @see CBitrixComponentTemplate::Init
      */
     public function GetName(): ?string
@@ -39,7 +58,7 @@ class CBitrixComponentTemplate
      * Requires Init call before usage.
      *
      * @return null|string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/getfile.php
      * @see CBitrixComponentTemplate::Init
      */
     public function GetFile(): ?string
@@ -53,7 +72,7 @@ class CBitrixComponentTemplate
      * Requires Init call before usage.
      *
      * @return null|string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/getfolder.php
      * @see CBitrixComponentTemplate::Init
      */
     public function GetFolder(): ?string
@@ -67,7 +86,7 @@ class CBitrixComponentTemplate
      * Requires Init call before usage.
      *
      * @return null|string
-     *
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/getsitetemplate.php
      * @see CBitrixComponentTemplate::Init
      */
     public function GetSiteTemplate(): ?string
@@ -188,20 +207,19 @@ class CBitrixComponentTemplate
 
     /**
      * Search template by its name in various locations.
-     * <ol>
-     * <li>/local/templates/&lt;site template&gt;/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/local/templates/.default/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/local/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/local/templates/&lt;site template&gt;/components/&lt;component path&gt;/
-     * <li>/local/templates/.default/components/&lt;component path&gt;/
-     * <li>/local/components/&lt;component path&gt;/
-     * <li>/&lt;BX_PERSONAL_ROOT&gt;/templates/&lt;site template&gt;/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/&lt;BX_PERSONAL_ROOT&gt;/templates/.default/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/bitrix/components/&lt;parent template&gt;/&lt;component path&gt;/
-     * <li>/&lt;BX_PERSONAL_ROOT&gt;/templates/&lt;site template&gt;/components/&lt;component path&gt;/
-     * <li>/&lt;BX_PERSONAL_ROOT&gt;/templates/.default/components/&lt;component path&gt;/
-     * <li>/bitrix/components/&lt;component path&gt;/
-     * </ol>
+     * 
+     * - /local/templates/<site template>/components/<parent template>/<component path>/
+     * - /local/templates/.default/components/<parent template>/<component path>/
+     * - /local/components/<parent template>/<component path>/
+     * - /local/templates/<site template>/components/<component path>/
+     * - /local/templates/.default/components/<component path>/
+     * - /local/components/<component path>/
+     * - /<BX_PERSONAL_ROOT>/templates/<site template>/components/<parent template>/<component path>/
+     * - /<BX_PERSONAL_ROOT>/templates/.default/components/<parent template>/<component path>/
+     * - /bitrix/components/<parent template>/<component path>/
+     * - /<BX_PERSONAL_ROOT>/templates/<site template>/components/<component path>/
+     * - /<BX_PERSONAL_ROOT>/templates/.default/components/<component path>/
+     * - /bitrix/components/<component path>/
      *
      * @param string $customTemplatePath
      *
@@ -278,7 +296,7 @@ class CBitrixComponentTemplate
 
     /**
      * Shows menu with edit action in edit mode.
-     * <code>
+     * ```php
      * $this->AddEditAction(
      * 	'USER'.$arUser['ID'],
      * 	$arUser['EDIT_LINK'],
@@ -289,7 +307,7 @@ class CBitrixComponentTemplate
      * 		'SRC' => '/bitrix/images/myicon.gif' // icon image
      * 	)
      * );
-     * </code>
+     * ```
      *
      * @param string $entryId Entry identifier. prefix like 'USER' needed only in case when template has two or more lists of different editable entities.
      * @param string $editLink Edit form link, Should be set in a component. Will be opened in js popup.
@@ -303,12 +321,10 @@ class CBitrixComponentTemplate
     { }
 
     /**
-     * Shows menu with delete action in edit mode.
-     * <ul>
-     * $arParams['CONFIRM'] = false - disable confirm;
-     * $arParams['CONFIRM'] = 'Text' - confirm with custom text;
-     * no $arParams['CONFIRM'] at all - confirm with default text
-     * </ul>
+     * Shows menu with delete action in edit mode. 
+     * - $arParams['CONFIRM'] = false - disable confirm;
+     * - $arParams['CONFIRM'] = 'Text' - confirm with custom text;
+     * - no $arParams['CONFIRM'] at all - confirm with default text
      *
      * @param string $entryId Entry identifier. prefix like 'USER' needed only in case when template has two or more lists of different editable entities.
      * @param string $deleteLink Delete action link, Should be set in a component.
@@ -318,15 +334,14 @@ class CBitrixComponentTemplate
      * @return void
      * @see CBitrixcomponentTemplate::GetEditAreaId
      */
-    public function AddDeleteAction(string $entryId, string $deleteLink, $deleteTitle = false, array $arParams = []): void
+    public function AddDeleteAction1(string $entryId, string $deleteLink, $deleteTitle = false, array $arParams = []): void
     { }
 
     /**
-     * Returns identifier to mark an html element as a container for highlight.
-     *
-     * <code>
-     * &lt;tr id="&lt;?=$this-&gt;GetEditAreaId('USER'.$arUser['ID']);?&gt;"&gt;
-     * </code>
+     * Returns identifier to mark an html element as a container for highlight. 
+     * ```php
+     * <tr id="<?=$this->GetEditAreaId('USER'.$arUser['ID']);?>">
+     * ```
      *
      * @param $entryId
      *
@@ -372,12 +387,11 @@ class CBitrixComponentTemplate
 
 	/**
 	 * Returns new frame helper object to work with composite frame.
-	 *
-	 * <code>
+	 * ```php
 	 * $frame = $this->createFrame()->begin("");
 	 * echo "10@".(time()+15);
 	 * $frame->end();
-	 * </code>
+	 * ```
 	 *
 	 * @param string $id
 	 * @param bool $autoContainer
@@ -385,7 +399,7 @@ class CBitrixComponentTemplate
 	 * @return Bitrix\Main\Composite\BufferArea
 	 * @see Bitrix\Main\Composite\BufferArea
 	 */
-    public function createFrame(?string $id = null, bool $autoContainer = true): Bitrix\Main\Composite\BufferArea
+    public function createFrame1(?string $id = null, bool $autoContainer = true): Bitrix\Main\Composite\BufferArea
     {
         return new Bitrix\Main\Composite\BufferArea($id, $autoContainer);
     }
@@ -416,7 +430,9 @@ class CBitrixComponentTemplate
 
     /**
      * Метод возвращает ссылку на экземпляр класса CBitrixComponent.
+     * 
      * @return CBitrixComponent
+     * @link https://dev.1c-bitrix.ru/api_help/main/reference/cbitrixcomponenttemplate/getcomponent.php
      */
     public function getComponent(): CBitrixComponent
     {
