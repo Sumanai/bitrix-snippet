@@ -18,6 +18,29 @@ interface ICacheEngineStat
     public function getCachePath();
 }
 
+/**
+ * **Cache** - финальный класс для кеширования PHP переменных и HTML результата выполнения скрипта. Почти ничем не отличается в обращении от класса CPHPCache старого ядра. 
+ * Пример использования 
+ * ```php
+ * $cache = Bitrix\Main\Data\Cache::createInstance();
+ * if ($cache->initCache($cacheTime, $cacheId, $cacheDir))
+ * {
+ *     $result = $cache->getVars();
+ * }
+ * elseif ($cache->startDataCache())
+ * {
+ *     $result = array();
+ *     // …
+ *     if ($isInvalid)
+ *     {
+ *         $cache->abortDataCache();
+ *     }
+ *     // …
+ *     $cache->endDataCache($result);
+ * }
+ * ```
+ * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/data/cache/index.php
+ */
 class Cache
 {
     public static function createCacheEngine(): ICacheEngine
@@ -45,19 +68,21 @@ class Cache
     { }
 
     /**
-     * Статический метод позволяет пользователю с достаточным уровнем прав пропустить создание кеша на данном хите.
+     * Позволяет пользователю с достаточным уровнем прав пропустить создание кеша на данном хите.
      *
      * @param boolean $clearCache
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/data/cache/setclearcache.php
      */
     public static function setClearCache(bool $clearCache): void
     { }
 
     /**
-     * Статический метод позволяет пользователю с достаточным уровнем прав пропустить создание кеша в этой сессии.
+     * Позволяет пользователю с достаточным уровнем прав пропустить создание кеша в этой сессии.
      *
      * @param boolean $clearCacheSession
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/data/cache/setclearcachesession.php
      */
     public static function setClearCacheSession(bool $clearCacheSession): void
     { }
@@ -68,15 +93,22 @@ class Cache
     }
 
     /**
-     * Статический метод возвращает true если пользователь с достаточным уровнем прав пропускает чтение данных из кеша в этой сессии.
+     * Возвращает true если пользователь с достаточным уровнем прав пропускает чтение данных из кеша в этой сессии.
      *
      * @return boolean
+     * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/data/cache/shouldclearcache.php
      */
     public static function shouldClearCache(): bool
     {
         return false;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param string $uniqueString
+     * @return string
+     */
     public static function getPath(string $uniqueString): string
     {
         return '';
@@ -96,7 +128,7 @@ class Cache
     }
 
     /**
-     * Метод очищает кеш по параметру basedir.
+     * Очищает кеш по параметру basedir.
      *
      * @param string|boolean $initDir По умолчанию false
      * @param string $baseDir Базовая директория кеша. По умолчанию равен cache, то есть все сохраняется в /BX_PERSONAL_ROOT/cache/, где BX_PERSONAL_ROOT по умолчанию равен bitrix.
@@ -185,21 +217,34 @@ class Cache
         return false;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return boolean
+     */
     public function isStarted(): bool
     {
         return false;
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param boolean $full
+     * @param string $initDir
+     * @return boolean
+     */
     public static function clearCache($full = false, $initDir = ""): bool
     {
         return false;
     }
 
     /**
-     * Метод устанавливает режим игнорирования TTL и перезаписывает кеш.
+     * Устанавливает режим игнорирования TTL и перезаписывает кеш.
      *
      * @param boolean $mode
      * @return void
+     * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/data/cache/forcerewriting.php
      */
     public function forceRewriting(bool $mode): void
     { }
