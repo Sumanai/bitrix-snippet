@@ -319,7 +319,7 @@ abstract class DataManager
      * @throws Main\ArgumentOutOfRangeException
      * @link https://dev.1c-bitrix.ru/api_d7/bitrix/main/entity/datamanager/enablecrypto.php
      */
-    public static function enableCrypto(string $field, boolean $mode = true): void
+    public static function enableCrypto(string $field, bool $mode = true): void
     { }
 
     /**

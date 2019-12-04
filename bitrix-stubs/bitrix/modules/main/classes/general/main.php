@@ -225,11 +225,11 @@ class CAllMain
      * Устанавливает заголовок страницы. Если заголовок страницы у вас выводится с помощью метода CMain::ShowTitle, то устанавливать его вы можете уже после того как у вас будет выведен пролог сайта.
      *
      * @param string $title Заголовок страницы.
-     * @param arrray|null $arOptions Необязательный. По умолчанию - "null".
+     * @param array|null $arOptions Необязательный. По умолчанию - "null".
      * @return void
      * @link https://dev.1c-bitrix.ru/api_help/main/reference/cmain/settitle.php
      */
-    public function SetTitle(string $title, ?arrray $arOptions = null): void
+    public function SetTitle(string $title, ?array $arOptions = null): void
     { }
 
     /**
